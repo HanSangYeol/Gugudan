@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/mint"
     tools:context="com.example.the.gugudan.MainActivity">
 
    <FrameLayout
@@ -34,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/galleryBtn"
             android:tag="0"
             android:gravity="center"
             android:layout_weight="1"
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:text="갤러리"/>
         <TextView
+            android:id="@+id/videoBtn"
             android:tag="1"
             android:gravity="center"
             android:layout_weight="1"
@@ -48,6 +51,7 @@
             android:layout_height="wrap_content"
             android:text="동영상"/>
         <TextView
+            android:id="@+id/scheduleBtn"
             android:tag="2"
             android:gravity="center"
             android:layout_weight="1"
@@ -55,6 +59,7 @@
             android:layout_height="wrap_content"
             android:text="스케줄"/>
         <TextView
+            android:id="@+id/eventBtn"
             android:tag="3"
             android:gravity="center"
             android:layout_weight="1"
@@ -62,6 +67,7 @@
             android:layout_height="wrap_content"
             android:text="이벤트"/>
         <TextView
+            android:id="@+id/qaBtn"
             android:tag="4"
             android:gravity="center"
             android:layout_weight="1"
