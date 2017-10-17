@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-import com.example.the.gugudan.Adapter.ImageAdapter;
+import com.example.the.gugudan.Adapter.GalleryAdapter;
 import com.example.the.gugudan.R;
 
 /**
@@ -25,7 +25,7 @@ public class GalleryFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_gallery, container, false);
         this.galleryGridView = (GridView) v.findViewById(R.id.galleryGridView);
-        galleryGridView.setAdapter(new ImageAdapter(getActivity()));
+        galleryGridView.setAdapter(new GalleryAdapter(getActivity()));
         return v;
     }
 
