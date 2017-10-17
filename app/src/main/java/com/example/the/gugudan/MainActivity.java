@@ -19,6 +19,10 @@ public class MainActivity extends BaseActivity {
     private android.widget.TextView eventBtn;
     private android.widget.TextView qaBtn;
     private android.widget.LinearLayout galleryLayout;
+    private LinearLayout VideoLayout;
+    private LinearLayout scheduleLayout;
+    private LinearLayout EventLayout;
+    private LinearLayout qaFragLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +36,29 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setupEvents() {
 
-        View.OnClickListener textStyle = new View.OnClickListener() {
+        View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int index = Integer.parseInt(view.getTag().toString());
+                LinearLayout[] frags = {galleryLayout, VideoLayout, scheduleLayout, EventLayout, qaFragLayout};
                 TextView[] text = {galleryBtn, videoBtn, scheduleBtn, eventBtn, qaBtn};
                 for (TextView textView : text){
                     textView.setTypeface(null, Typeface.NORMAL);
                 }
+                for (LinearLayout linearLayout : frags){
+                    linearLayout.setVisibility(View.GONE);
+                }
                 text[index].setTypeface(null, Typeface.BOLD);
+                frags[index].setVisibility(View.VISIBLE);
 
             }
         };
 
-        galleryBtn.setOnClickListener(textStyle);
-        videoBtn.setOnClickListener(textStyle);
-        scheduleBtn.setOnClickListener(textStyle);
-        eventBtn.setOnClickListener(textStyle);
-        qaBtn.setOnClickListener(textStyle);
+        galleryBtn.setOnClickListener(clickListener);
+        videoBtn.setOnClickListener(clickListener);
+        scheduleBtn.setOnClickListener(clickListener);
+        eventBtn.setOnClickListener(clickListener);
+        qaBtn.setOnClickListener(clickListener);
     }
 
     @Override
@@ -60,6 +69,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void bindView() {
+        this.qaFragLayout = (LinearLayout) findViewById(R.id.qaFragLayout);
+        this.EventLayout = (LinearLayout) findViewById(R.id.EventLayout);
+        this.scheduleLayout = (LinearLayout) findViewById(R.id.scheduleLayout);
+        this.VideoLayout = (LinearLayout) findViewById(R.id.VideoLayout);
         this.galleryLayout = (LinearLayout) findViewById(R.id.galleryLayout);
         this.qaBtn = (TextView) findViewById(R.id.qaBtn);
         this.eventBtn = (TextView) findViewById(R.id.eventBtn);

@@ -91,6 +91,54 @@
                 android:layout_height="match_parent"
                 tools:layout="@layout/frag_gallery"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/VideoLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:id="@+id/VideoFrag"
+                class="com.example.the.gugudan.Fragment.VideoFrag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_video"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/scheduleLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:id="@+id/ScheduleFrag"
+                class="com.example.the.gugudan.Fragment.ScheduleFrag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_scheduel"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/EventLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:id="@+id/EventFrag"
+                class="com.example.the.gugudan.Fragment.EventFrag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_event"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/qaFragLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:id="@+id/QAFrag"
+                class="com.example.the.gugudan.Fragment.QAFrag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_qa"/>
+        </LinearLayout>
     </FrameLayout>
 
 
