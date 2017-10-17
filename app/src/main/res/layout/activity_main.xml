@@ -41,7 +41,8 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="갤러리"/>
+            android:text="갤러리"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/videoBtn"
             android:tag="1"
@@ -80,12 +81,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:id="@+id/galleryLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <FrameLayout
+            <fragment
+                android:id="@+id/GalleryFrag"
+                class="com.example.the.gugudan.Fragment.GalleryFrag"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </FrameLayout>
+                android:layout_height="match_parent"
+                tools:layout="@layout/frag_gallery"/>
         </LinearLayout>
     </FrameLayout>
 

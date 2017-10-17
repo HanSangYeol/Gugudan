@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,6 +18,7 @@ public class MainActivity extends BaseActivity {
     private android.widget.TextView scheduleBtn;
     private android.widget.TextView eventBtn;
     private android.widget.TextView qaBtn;
+    private android.widget.LinearLayout galleryLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void bindView() {
-
+        this.galleryLayout = (LinearLayout) findViewById(R.id.galleryLayout);
         this.qaBtn = (TextView) findViewById(R.id.qaBtn);
         this.eventBtn = (TextView) findViewById(R.id.eventBtn);
         this.scheduleBtn = (TextView) findViewById(R.id.scheduleBtn);
