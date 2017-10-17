@@ -16,13 +16,13 @@ public class MainActivity extends BaseActivity {
     private android.widget.TextView galleryBtn;
     private android.widget.TextView videoBtn;
     private android.widget.TextView scheduleBtn;
-    private android.widget.TextView eventBtn;
     private android.widget.TextView qaBtn;
     private android.widget.LinearLayout galleryLayout;
-    private LinearLayout VideoLayout;
     private LinearLayout scheduleLayout;
-    private LinearLayout EventLayout;
     private LinearLayout qaFragLayout;
+    private TextView noticeBtn;
+    private LinearLayout noticeLayout;
+    private LinearLayout videoLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +40,12 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 int index = Integer.parseInt(view.getTag().toString());
-                LinearLayout[] frags = {galleryLayout, VideoLayout, scheduleLayout, EventLayout, qaFragLayout};
-                TextView[] text = {galleryBtn, videoBtn, scheduleBtn, eventBtn, qaBtn};
-                for (TextView textView : text){
+                LinearLayout[] frags = {noticeLayout, galleryLayout, videoLayout, scheduleLayout, qaFragLayout};
+                TextView[] text = {noticeBtn, galleryBtn, videoBtn, scheduleBtn, qaBtn};
+                for (TextView textView : text) {
                     textView.setTypeface(null, Typeface.NORMAL);
                 }
-                for (LinearLayout linearLayout : frags){
+                for (LinearLayout linearLayout : frags) {
                     linearLayout.setVisibility(View.GONE);
                 }
                 text[index].setTypeface(null, Typeface.BOLD);
@@ -54,10 +54,10 @@ public class MainActivity extends BaseActivity {
             }
         };
 
+        noticeBtn.setOnClickListener(clickListener);
         galleryBtn.setOnClickListener(clickListener);
         videoBtn.setOnClickListener(clickListener);
         scheduleBtn.setOnClickListener(clickListener);
-        eventBtn.setOnClickListener(clickListener);
         qaBtn.setOnClickListener(clickListener);
     }
 
@@ -70,15 +70,15 @@ public class MainActivity extends BaseActivity {
     @Override
     public void bindView() {
         this.qaFragLayout = (LinearLayout) findViewById(R.id.qaFragLayout);
-        this.EventLayout = (LinearLayout) findViewById(R.id.EventLayout);
         this.scheduleLayout = (LinearLayout) findViewById(R.id.scheduleLayout);
-        this.VideoLayout = (LinearLayout) findViewById(R.id.VideoLayout);
+        this.videoLayout = (LinearLayout) findViewById(R.id.videoLayout);
         this.galleryLayout = (LinearLayout) findViewById(R.id.galleryLayout);
+        this.noticeLayout = (LinearLayout) findViewById(R.id.noticeLayout);
         this.qaBtn = (TextView) findViewById(R.id.qaBtn);
-        this.eventBtn = (TextView) findViewById(R.id.eventBtn);
         this.scheduleBtn = (TextView) findViewById(R.id.scheduleBtn);
         this.videoBtn = (TextView) findViewById(R.id.videoBtn);
         this.galleryBtn = (TextView) findViewById(R.id.galleryBtn);
+        this.noticeBtn = (TextView) findViewById(R.id.noticeBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
         this.allViewBtn = (ImageView) findViewById(R.id.allViewBtn);
     }

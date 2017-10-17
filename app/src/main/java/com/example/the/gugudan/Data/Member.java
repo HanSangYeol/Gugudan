@@ -7,35 +7,23 @@ import java.util.Calendar;
  */
 
 public class Member {
-    int id;
-    int age;
-    int height;
-    Calendar birthday;
-    String name;
-    String nickName;
-    String bloodtype;
-    String agency;
+    private int age;
+    private Calendar birthday;
+    private String name;
+    private String nickName;
+    private String bloodtype;
+    private String position;
 
     public Member() {
     }
 
-    public Member(int id, int age, int height, Calendar birthday, String name, String nickName, String bloodtype, String agency) {
-        this.id = id;
+    public Member(int age, Calendar birthday, String name, String nickName, String bloodtype, String position) {
         this.age = age;
-        this.height = height;
         this.birthday = birthday;
         this.name = name;
         this.nickName = nickName;
         this.bloodtype = bloodtype;
-        this.agency = agency;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.position = position;
     }
 
     public int getAge() {
@@ -44,14 +32,6 @@ public class Member {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     public Calendar getBirthday() {
@@ -86,11 +66,11 @@ public class Member {
         this.bloodtype = bloodtype;
     }
 
-    public String getAgency() {
-        return agency;
+    public String getPosition() {
+        return position;
     }
 
-    public void setAgency(String agency) {
-        this.agency = agency;
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

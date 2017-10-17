@@ -13,13 +13,12 @@ import com.example.the.gugudan.R;
  * Created by the on 2017-10-17.
  */
 
-public class EventFrag extends Fragment {
-
+public class MemberFrag extends Fragment {
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_event, container, false);
+        View view = inflater.inflate(R.layout.frag_qa, container, false);
         return view;
     }
-
 }

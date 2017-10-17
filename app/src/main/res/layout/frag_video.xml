@@ -3,9 +3,113 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/youtubeFrag"
-        android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:padding="4dp"
+        android:background="@color/white"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/youtubeFrag"
+            android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="구구단 오구오구 (OGUOGU) - ICE CHU MV"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:padding="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CJENMMUSIC Official "
+                        android:textSize="12sp"
+                        android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/red"
+                            android:text="구독"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                        <TextView
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="320만"
+                            android:textSize="12sp"
+                            android:background="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="게시일:"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2017. 8. 11."
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="구구단의 과즙미 넘치는 FUN한 첫 유닛 ‘구구단 오구오구’!
+(ICE CHU), 상큼발랄 다재다능한 막내라인 미나X혜연이 뭉쳤다!"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
