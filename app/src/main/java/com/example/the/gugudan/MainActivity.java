@@ -23,6 +23,8 @@ public class MainActivity extends BaseActivity {
     private TextView noticeBtn;
     private LinearLayout noticeLayout;
     private LinearLayout videoLayout;
+    private TextView memberBtn;
+    private LinearLayout memberLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,8 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 int index = Integer.parseInt(view.getTag().toString());
-                LinearLayout[] frags = {noticeLayout, galleryLayout, videoLayout, scheduleLayout, qaFragLayout};
-                TextView[] text = {noticeBtn, galleryBtn, videoBtn, scheduleBtn, qaBtn};
+                LinearLayout[] frags = {noticeLayout, memberLayout, galleryLayout, videoLayout, scheduleLayout, qaFragLayout};
+                TextView[] text = {noticeBtn, memberBtn, galleryBtn, videoBtn, scheduleBtn, qaBtn};
                 for (TextView textView : text) {
                     textView.setTypeface(null, Typeface.NORMAL);
                 }
@@ -55,6 +57,7 @@ public class MainActivity extends BaseActivity {
         };
 
         noticeBtn.setOnClickListener(clickListener);
+        memberBtn.setOnClickListener(clickListener);
         galleryBtn.setOnClickListener(clickListener);
         videoBtn.setOnClickListener(clickListener);
         scheduleBtn.setOnClickListener(clickListener);
@@ -73,11 +76,13 @@ public class MainActivity extends BaseActivity {
         this.scheduleLayout = (LinearLayout) findViewById(R.id.scheduleLayout);
         this.videoLayout = (LinearLayout) findViewById(R.id.videoLayout);
         this.galleryLayout = (LinearLayout) findViewById(R.id.galleryLayout);
+        this.memberLayout = (LinearLayout) findViewById(R.id.memberLayout);
         this.noticeLayout = (LinearLayout) findViewById(R.id.noticeLayout);
         this.qaBtn = (TextView) findViewById(R.id.qaBtn);
         this.scheduleBtn = (TextView) findViewById(R.id.scheduleBtn);
         this.videoBtn = (TextView) findViewById(R.id.videoBtn);
         this.galleryBtn = (TextView) findViewById(R.id.galleryBtn);
+        this.memberBtn = (TextView) findViewById(R.id.memberBtn);
         this.noticeBtn = (TextView) findViewById(R.id.noticeBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
         this.allViewBtn = (ImageView) findViewById(R.id.allViewBtn);

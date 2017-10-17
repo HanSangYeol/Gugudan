@@ -109,7 +109,7 @@
             class="com.example.the.gugudan.Fragment.MemberFrag"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/frag_gallery"/>
+            tools:layout="@layout/frag_member"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/galleryLayout"

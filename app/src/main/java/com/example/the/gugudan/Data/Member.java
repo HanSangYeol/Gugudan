@@ -13,17 +13,37 @@ public class Member {
     private String nickName;
     private String bloodtype;
     private String position;
+    private String groupPosition;
+    private int profileImg;
 
     public Member() {
     }
 
-    public Member(int age, Calendar birthday, String name, String nickName, String bloodtype, String position) {
+    public Member(int age, Calendar birthday, String name, String nickName, String bloodtype, String position, String groupPosition, int profileImg) {
         this.age = age;
         this.birthday = birthday;
         this.name = name;
         this.nickName = nickName;
         this.bloodtype = bloodtype;
         this.position = position;
+        this.groupPosition = groupPosition;
+        this.profileImg = profileImg;
+    }
+
+    public String getGroupPosition() {
+        return groupPosition;
+    }
+
+    public void setGroupPosition(String groupPosition) {
+        this.groupPosition = groupPosition;
+    }
+
+    public int getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(int profileImg) {
+        this.profileImg = profileImg;
     }
 
     public int getAge() {
