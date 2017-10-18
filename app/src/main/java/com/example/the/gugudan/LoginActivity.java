@@ -24,6 +24,7 @@ public class LoginActivity extends BaseActivity {
     private android.widget.TextView findPwBtn;
 
     List<User> userList = null;
+    User loginUser = null;
 
 
     @Override
@@ -51,14 +52,21 @@ public class LoginActivity extends BaseActivity {
                     checkPw = false;
                 }
                 if (checkId && checkPw) {
-                    GlobalData.userData();
-                    userList = GlobalData.userList;
+//                    loginUser = new User(idEdt.getText().toString(), pwEdt.getText().toString(), "");
+//                    if (GlobalData.userList.equals(loginUser)) {
+//                        Toast.makeText(mContext, "존재하지않는 아이디입니다", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        Toast.makeText(mContext, "로그인 완료", Toast.LENGTH_SHORT).show();
+//                        SignActivity.signActivity.finish();
+//                        finish();
+//                    }
                     for (User user : GlobalData.userList) {
                         if (idEdt.getText().toString().equals(user.getId())) {
                             if (pwEdt.getText().toString().equals(user.getPw())) {
                                 Toast.makeText(mContext, "로그인 완료", Toast.LENGTH_SHORT).show();
                                 SignActivity.signActivity.finish();
                                 finish();
+                                break;
                             } else {
                                 Toast.makeText(mContext, "비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                                 break;
