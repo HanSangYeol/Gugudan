@@ -59,18 +59,22 @@ public class QAFrag extends Fragment {
     }
 
     private void setValues() {
-        GlobalData.postData();
         postList.addAll(GlobalData.postList);
 
         postAdatper = new PostAdatper(getActivity(), postList);
         questionListView.setAdapter(postAdatper);
-        postAdatper.notifyDataSetChanged();
 
     }
 
     @Override
     public void onResume() {
-
+        postList.clear();
+//        postList.addAll(GlobalData.postList);
+        for (int i = GlobalData.postList.size()-1; i >= 0; i--){
+            Post post = GlobalData.postList.get(i);
+            postList.add(post);
+        }
+        postAdatper.notifyDataSetChanged();
         super.onResume();
     }
 }

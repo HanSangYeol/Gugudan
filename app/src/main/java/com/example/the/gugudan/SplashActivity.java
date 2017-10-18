@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.the.gugudan.Util.GlobalData;
 
 public class SplashActivity extends BaseActivity {
 
@@ -27,6 +28,8 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+        GlobalData.postData();
 
         new Handler().postDelayed(new Runnable() {
             @Override
