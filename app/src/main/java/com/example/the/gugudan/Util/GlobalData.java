@@ -33,7 +33,7 @@ public class GlobalData {
     public static void noticeData(){
         noticeList.add(new Notice("1023 ‘샐리’ 생일 서포트 신청 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("2017 추석특집 MBC 아육대 현수막 신청 안내", Calendar.getInstance(), ""));
-        noticeList.add(new Notice("구구단 1st Fanmeeting ~9월 9일의 구구단짝~ 공식 굿즈 현장 판매 안내  ", Calendar.getInstance(), ""));
+        noticeList.add(new Notice("구구단 1st Fanmeeting ~9월 9일의 구구단짝~ 공식 굿즈 현장 판매 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("구구단 1st Fanmeeting ~9월 9일의 구구단짝~ 기부화환 신청 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("구구단 오구오구(OGUOGU) - 'ICE CHU' 공식 굿즈 온라인 판매 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("구구단 오구오구 'ICE CHU' 응원법", Calendar.getInstance(), ""));

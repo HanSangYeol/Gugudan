@@ -1,6 +1,7 @@
 package com.example.the.gugudan.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -52,6 +53,35 @@ public class NoticeAdatper extends ArrayAdapter<Notice> {
 
         numberTxt.setText(mList.size()-position+"");
         titleTxt.setText(data.getTitle());
+        if (data.getTitle().contains("응원법")){
+            titleTxt.setTextColor(Color.parseColor("#F06FB2"));
+        }
+        if (data.getTitle().contains("팬사인회")){
+            titleTxt.setTextColor(Color.parseColor("#AB78FF"));
+        }
+        if (data.getTitle().contains("판매")){
+            titleTxt.setTextColor(Color.parseColor("#005766"));
+        }
+        if (data.getTitle().contains("악성") ||
+                data.getTitle().contains("취소") ||
+                data.getTitle().contains("자제")){
+            titleTxt.setTextColor(Color.parseColor("#5C6160"));
+        }
+        if (data.getTitle().contains("팬미팅")){
+            titleTxt.setTextColor(Color.parseColor("#FB711D"));
+        }
+        if (data.getTitle().contains("서포트")){
+            titleTxt.setTextColor(Color.parseColor("#F06FB2"));
+        }
+        if (data.getTitle().contains("예매")){
+            titleTxt.setTextColor(Color.parseColor("#4BBDD1"));
+        }
+        if (data.getTitle().contains("현수막")){
+            titleTxt.setTextColor(Color.parseColor("#8137FE"));
+        }
+        if (data.getTitle().contains("기부화환")){
+            titleTxt.setTextColor(Color.parseColor("#4547FE"));
+        }
         SimpleDateFormat myDateFormat = new SimpleDateFormat("yyyy.MM.dd");
         String date = myDateFormat.format(mList.get(position).getCreatDate().getTime());
         dataTxt.setText(date);

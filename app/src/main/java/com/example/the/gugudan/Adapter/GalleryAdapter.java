@@ -1,6 +1,9 @@
 package com.example.the.gugudan.Adapter;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,10 +38,12 @@ public class GalleryAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
+
+
         ImageView imageView;
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(240, 180));
+            imageView.setLayoutParams(new GridView.LayoutParams(300, 200));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setPadding(8, 8, 8, 8);
         } else {

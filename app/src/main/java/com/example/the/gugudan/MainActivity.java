@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.the.gugudan.Fragment.VideoFrag;
 
 public class MainActivity extends BaseActivity {
 
@@ -37,6 +38,22 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+        View.OnClickListener homeClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinearLayout[] frags = {noticeLayout, memberLayout, galleryLayout, videoLayout, scheduleLayout, qaFragLayout};
+                TextView[] text = {noticeBtn, memberBtn, galleryBtn, videoBtn, scheduleBtn, qaBtn};
+                for (TextView textView : text) {
+                    textView.setTypeface(null, Typeface.NORMAL);
+                }
+                for (LinearLayout linearLayout : frags) {
+                    linearLayout.setVisibility(View.GONE);
+                }
+                frags[0].setVisibility(View.VISIBLE);
+                text[0].setTypeface(null, Typeface.BOLD);
+                VideoFrag.youtubePlayer.pause();
+            }
+        };
 
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
@@ -52,13 +69,14 @@ public class MainActivity extends BaseActivity {
                 }
                 text[index].setTypeface(null, Typeface.BOLD);
                 frags[index].setVisibility(View.VISIBLE);
-                if (index == 3){
-
+                if (!(index == 3)){
+                    VideoFrag.youtubePlayer.pause();
                 }
 
             }
         };
 
+        homeBtn.setOnClickListener(homeClickListener);
         noticeBtn.setOnClickListener(clickListener);
         memberBtn.setOnClickListener(clickListener);
         galleryBtn.setOnClickListener(clickListener);
@@ -66,6 +84,7 @@ public class MainActivity extends BaseActivity {
         scheduleBtn.setOnClickListener(clickListener);
         qaBtn.setOnClickListener(clickListener);
     }
+
 
     @Override
     public void setValues() {
