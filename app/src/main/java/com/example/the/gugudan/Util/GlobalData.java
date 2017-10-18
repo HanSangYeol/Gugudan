@@ -3,6 +3,7 @@ package com.example.the.gugudan.Util;
 
 import com.example.the.gugudan.Data.Member;
 import com.example.the.gugudan.Data.Notice;
+import com.example.the.gugudan.Data.User;
 import com.example.the.gugudan.R;
 
 import java.util.ArrayList;
@@ -17,6 +18,11 @@ public class GlobalData {
 
     public static List<Member> memberList = new ArrayList<>();
     public static List<Notice> noticeList = new ArrayList<>();
+    public static List<User> userList = new ArrayList<>();
+
+    public static void userData(){
+        userList.add(new User("Mina", "1234", "강미나"));
+    }
 
     public static void memberData(){
         memberList.add(new Member(25, Calendar.getInstance(), "신보라", "하나", "A형", "1단", "리더", R.drawable.one));

@@ -11,10 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!-- <meta-data -->
-        <!-- android:name="com.google.android.geo.AIzaSyCBz3h4zx5wLkUyMZGB-NiahwezMEH6Hs4" -->
-        <!-- android:value="2D:2B:F3:95:E2:F6:CF:6B:D8:94:13:D0:DF:9D:C0:B1:99:42:1C:72" /> -->
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -24,8 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".WriteActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".LoginActivity"
+            android:theme="@style/hideTitleDialog" />
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/hideTitleDialog" />
+        <activity android:name=".SignActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/mint"
+    tools:context="com.example.the.gugudan.SignActivity">
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gugudan_icon_1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/loginBtn"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:background="@drawable/mint_round_box"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_marginLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="간편 가입"
+            android:background="@drawable/mint_round_box"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gugudan_icon_1"/>
+
+
+</LinearLayout>
