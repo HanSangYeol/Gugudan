@@ -52,6 +52,9 @@ public class MainActivity extends BaseActivity {
                 }
                 text[index].setTypeface(null, Typeface.BOLD);
                 frags[index].setVisibility(View.VISIBLE);
+                if (index == 3){
+
+                }
 
             }
         };
@@ -67,7 +70,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setValues() {
         Glide.with(mContext).load(R.drawable.gugudan_icon_1).into(homeBtn);
-        Glide.with(mContext).load(R.drawable.align_icon).into(allViewBtn);
+//        Glide.with(mContext).load(R.drawable.align_icon).into(allViewBtn);
     }
 
     @Override

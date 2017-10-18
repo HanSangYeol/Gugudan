@@ -47,5 +47,9 @@ public class VideoFrag extends Fragment {
 
             }
         });
+
+
     }
+
+
 }

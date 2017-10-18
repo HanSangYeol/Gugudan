@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.the.gugudan.Adapter.NoticeAdatper;
 import com.example.the.gugudan.Data.Notice;
 import com.example.the.gugudan.R;
+import com.example.the.gugudan.Util.GlobalData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,8 @@ public class NoticeFrag extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        GlobalData.noticeData();
+        noticeList.addAll(GlobalData.noticeList);
 
         noticeAdatper = new NoticeAdatper(getActivity(), noticeList);
         noticeListView.setAdapter(noticeAdatper);

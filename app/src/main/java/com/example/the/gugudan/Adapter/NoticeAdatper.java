@@ -7,10 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.example.the.gugudan.Data.Notice;
 import com.example.the.gugudan.R;
+import com.example.the.gugudan.Util.GlobalData;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +22,7 @@ import java.util.List;
  */
 
 public class NoticeAdatper extends ArrayAdapter<Notice> {
+
 
     Context mContext;
     List<Notice> mList;
@@ -38,12 +43,20 @@ public class NoticeAdatper extends ArrayAdapter<Notice> {
         if (row == null){
             row = inf.inflate(R.layout.notice_item, null);
         }
+        Notice data = mList.get(position);
+
+
+        TextView numberTxt = (TextView)row.findViewById(R.id.numberTxt);
+        TextView titleTxt = (TextView)row.findViewById(R.id.titleTxt);
+        TextView dataTxt = (TextView)row.findViewById(R.id.dateTxt);
+
+        numberTxt.setText(mList.size()-position+"");
+        titleTxt.setText(data.getTitle());
+        SimpleDateFormat myDateFormat = new SimpleDateFormat("yyyy.MM.dd");
+        String date = myDateFormat.format(mList.get(position).getCreatDate().getTime());
+        dataTxt.setText(date);
 
         return row;
     }
 
-    @Override
-    public int getCount() {
-        return 10;
-    }
 }
