@@ -1,9 +1,17 @@
 package com.example.the.gugudan;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class WriteActivity extends BaseActivity {
+
+    private android.widget.ImageView cancleBtn;
+    private android.widget.TextView confirmBtn;
+    private android.widget.EditText titleEdt;
+    private android.widget.EditText contentEdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +29,26 @@ public class WriteActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+        cancleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
     @Override
     public void bindView() {
-
+        this.contentEdt = (EditText) findViewById(R.id.contentEdt);
+        this.titleEdt = (EditText) findViewById(R.id.titleEdt);
+        this.confirmBtn = (TextView) findViewById(R.id.confirmBtn);
+        this.cancleBtn = (ImageView) findViewById(R.id.cancleBtn);
     }
 }

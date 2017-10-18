@@ -3,6 +3,7 @@ package com.example.the.gugudan.Util;
 
 import com.example.the.gugudan.Data.Member;
 import com.example.the.gugudan.Data.Notice;
+import com.example.the.gugudan.Data.Post;
 import com.example.the.gugudan.Data.User;
 import com.example.the.gugudan.R;
 
@@ -19,6 +20,7 @@ public class GlobalData {
     public static List<Member> memberList = new ArrayList<>();
     public static List<Notice> noticeList = new ArrayList<>();
     public static List<User> userList = new ArrayList<>();
+    public static List<Post> postList = new ArrayList<>();
 
     public static void userData(){
         userList.add(new User("Mina", "1234", "강미나"));
