@@ -10,8 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.the.gugudan.Adapter.PostAdatper;
+import com.example.the.gugudan.Data.Post;
 import com.example.the.gugudan.R;
+import com.example.the.gugudan.Util.GlobalData;
 import com.example.the.gugudan.WriteActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by the on 2017-10-17.
@@ -21,6 +27,8 @@ public class QAFrag extends Fragment {
 
     private android.widget.TextView questionBtn;
     private android.widget.ListView questionListView;
+    PostAdatper postAdatper;
+    List<Post> postList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -34,7 +42,13 @@ public class QAFrag extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        setValues();
+        setupEvents();
 
+
+    }
+
+    private void setupEvents() {
         questionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,5 +56,21 @@ public class QAFrag extends Fragment {
                 startActivity(myIntent);
             }
         });
+    }
+
+    private void setValues() {
+        GlobalData.postData();
+        postList.addAll(GlobalData.postList);
+
+        postAdatper = new PostAdatper(getActivity(), postList);
+        questionListView.setAdapter(postAdatper);
+        postAdatper.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
     }
 }

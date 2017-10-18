@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.the.gugudan.Data.Post;
+import com.example.the.gugudan.Util.GlobalData;
 
 public class WriteActivity extends BaseActivity {
 
@@ -24,11 +28,6 @@ public class WriteActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
-
-    }
-
-    @Override
-    public void setValues() {
         cancleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,9 +37,29 @@ public class WriteActivity extends BaseActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean checkTitle = true;
+                if (titleEdt.getText().toString().equals("")) {
+                    Toast.makeText(mContext, "제목을 입력해주세요", Toast.LENGTH_SHORT).show();
+                    checkTitle = false;
+                }
+                boolean checkContent = true;
+                if (contentEdt.getText().toString().equals("")) {
+                    Toast.makeText(mContext, "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                    checkContent = false;
+                }
+                if (checkTitle && checkContent){
+                    GlobalData.postList.add(new Post(titleEdt.getText().toString(), contentEdt.getText().toString()));
+                    Toast.makeText(mContext, "게시글 작성 완료", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
 
             }
         });
+    }
+
+    @Override
+    public void setValues() {
+
 
     }
 

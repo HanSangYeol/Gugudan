@@ -1,6 +1,7 @@
 package com.example.the.gugudan.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,22 +23,15 @@ import java.util.List;
 public class PostAdatper extends ArrayAdapter<Post> {
 
     Context mContext;
-    int layout;
     List<Post> mList;
     LayoutInflater inf;
 
     public PostAdatper(Context context, List<Post> list) {
         super(context, R.layout.post_item, list);
         this.mContext = context;
-        this.layout = layout;
         mList = list;
 
         inf = LayoutInflater.from(mContext);
-    }
-
-    @Override
-    public int getCount() {
-        return mList.size();
     }
 
     @Override
@@ -47,6 +41,19 @@ public class PostAdatper extends ArrayAdapter<Post> {
             row = inf.inflate( R.layout.post_item, null);
         }
 
-        return convertView;
+        Post data = mList.get(position);
+
+        TextView qaNumberTxt = (TextView)row.findViewById(R.id.qaNumberTxt);
+        TextView qatitleTxt = (TextView)row.findViewById(R.id.qatitleTxt);
+
+        qaNumberTxt.setText(mList.size()-position+"");
+        qatitleTxt.setText(data.getTitle());
+        if (data.getTitle().contains("공지사항")){
+            qatitleTxt.setTextColor(Color.parseColor("#6B8EB8"));
+        }
+
+
+        return row;
     }
+
 }

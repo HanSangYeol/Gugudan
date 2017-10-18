@@ -22,11 +22,18 @@ public class GlobalData {
     public static List<User> userList = new ArrayList<>();
     public static List<Post> postList = new ArrayList<>();
 
+    public static void postData(){
+        postList.clear();
+        postList.add(new Post("질문답변 게시판 공지사항 (2016.06.17ver)", ""));
+    }
+
     public static void userData(){
+        userList.clear();
         userList.add(new User("Mina", "1234", "강미나"));
     }
 
     public static void memberData(){
+        memberList.clear();
         memberList.add(new Member(25, Calendar.getInstance(), "신보라", "하나", "A형", "1단", "리더", R.drawable.one));
         memberList.add(new Member(22, Calendar.getInstance(), "장소진", "소이", "AB형", "2단", "리드보컬", R.drawable.two));
         memberList.add(new Member(22, Calendar.getInstance(), "김세정", "세정", "AB형", "3단", "메인보컬", R.drawable.three));
@@ -39,6 +46,7 @@ public class GlobalData {
     }
 
     public static void noticeData(){
+        noticeList.clear();
         noticeList.add(new Notice("1023 ‘샐리’ 생일 서포트 신청 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("2017 추석특집 MBC 아육대 현수막 신청 안내", Calendar.getInstance(), ""));
         noticeList.add(new Notice("구구단 1st Fanmeeting ~9월 9일의 구구단짝~ 공식 굿즈 현장 판매 안내", Calendar.getInstance(), ""));
