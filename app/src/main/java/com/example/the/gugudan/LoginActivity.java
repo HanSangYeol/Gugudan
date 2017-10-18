@@ -41,27 +41,29 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 boolean checkId = true;
-                if (idEdt.getText().toString().equals("")){
+                if (idEdt.getText().toString().equals("")) {
                     Toast.makeText(mContext, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
                     checkId = false;
                 }
                 boolean checkPw = true;
-                if (pwEdt.getText().toString().equals("")){
+                if (pwEdt.getText().toString().equals("")) {
                     Toast.makeText(mContext, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
                     checkPw = false;
                 }
-                if (checkId && checkPw){
-                    for (User user : GlobalData.userList){
-                        if (idEdt.getText().toString().equals(user.getId())){
-                            if (pwEdt.getText().toString().equals(user.getPw())){
+                if (checkId && checkPw) {
+                    GlobalData.userData();
+                    userList = GlobalData.userList;
+                    for (User user : GlobalData.userList) {
+                        if (idEdt.getText().toString().equals(user.getId())) {
+                            if (pwEdt.getText().toString().equals(user.getPw())) {
                                 Toast.makeText(mContext, "로그인 완료", Toast.LENGTH_SHORT).show();
                                 SignActivity.signActivity.finish();
                                 finish();
-                            }else {
+                            } else {
                                 Toast.makeText(mContext, "비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                                 break;
                             }
-                        }else {
+                        } else {
                             Toast.makeText(mContext, "존재하지않는 아이디입니다", Toast.LENGTH_SHORT).show();
                             break;
                         }
@@ -77,7 +79,6 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void setValues() {
-
 
 
     }
