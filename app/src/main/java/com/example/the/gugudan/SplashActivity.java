@@ -31,6 +31,8 @@ public class SplashActivity extends BaseActivity {
 
         GlobalData.postData();
 
+        GlobalData.userData();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

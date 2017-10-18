@@ -41,4 +41,15 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    // 사용자 아이디 중복체크를 위해 equals를 Override
+    // User클래스(this)의 id를 비교하려는 오브젝트(obj)의 id를 if문으로 구분
+    @Override
+    public boolean equals(Object obj) {
+        if (this.id.equals(((User)obj).id)){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
