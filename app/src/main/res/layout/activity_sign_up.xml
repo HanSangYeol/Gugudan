@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.example.the.gugudan.SignUpActivity">
+    tools:context="com.sy_studio.the.gugudan_SangYeol.SignUpActivity">
 
     <LinearLayout
         android:layout_width="300dp"
