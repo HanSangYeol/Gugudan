@@ -32,13 +32,45 @@ public class VideoFrag extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
         YouTubePlayerSupportFragment supportFragment =
                 (YouTubePlayerSupportFragment) (getChildFragmentManager().findFragmentById(R.id.youtubeFrag));
         supportFragment.initialize(serverKey, new YouTubePlayer.OnInitializedListener() {
             @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer youTubePlayer, boolean b) {
                 youtubePlayer = youTubePlayer;
-                youtubePlayer.loadVideo("ZN6aso7870c");
+                youtubePlayer.cueVideo("ZN6aso7870c");
+//                youTubePlayer.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
+//                    @Override
+//                    public void onPlaying() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onPaused() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onStopped() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onBuffering(boolean b) {
+//                        if(b) {
+//
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onSeekTo(int i) {
+//
+//                    }
+//                });
+
+
             }
 
             @Override
