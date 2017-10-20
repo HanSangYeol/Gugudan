@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="300dp"
+    android:orientation="vertical" android:layout_width="200dp"
     android:id="@+id/naviDrawLayout"
     android:layout_height="match_parent">
 
@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:gravity="center"
+            android:gravity="center|top"
             android:background="@color/mint"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -22,22 +22,114 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/gugudan_icon_1"/>
             <LinearLayout
-                android:gravity="center"
+                android:orientation="vertical"
+                android:gravity="center|top"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:padding="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="준비중인 기능입니다"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@mipmap/ic_launcher_round"/>
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp"
+                            android:text="사진"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@mipmap/ic_launcher_round"/>
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp"
+                            android:text="동영상"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@mipmap/ic_launcher_round"/>
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp"
+                            android:text="설정"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:padding="5dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@mipmap/ic_launcher_round"/>
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp"
+                            android:text="동영상"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+
         </LinearLayout>
 
 

@@ -40,35 +40,6 @@ public class VideoFrag extends Fragment {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer youTubePlayer, boolean b) {
                 youtubePlayer = youTubePlayer;
                 youtubePlayer.cueVideo("ZN6aso7870c");
-//                youTubePlayer.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
-//                    @Override
-//                    public void onPlaying() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onPaused() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onStopped() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onBuffering(boolean b) {
-//                        if(b) {
-//
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onSeekTo(int i) {
-//
-//                    }
-//                });
 
 
             }

@@ -65,6 +65,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="공지사항"
+                        android:textColor="@color/text_color"
                         android:textStyle="bold"/>
                     <TextView
                         android:padding="5dp"
@@ -74,6 +75,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:text="맴버"/>
                     <TextView
                         android:padding="5dp"
@@ -83,6 +85,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:text="갤러리"/>
                     <TextView
                         android:padding="5dp"
@@ -92,6 +95,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:text="동영상"/>
                     <TextView
                         android:padding="5dp"
@@ -101,6 +105,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:text="스케줄"/>
                     <TextView
                         android:padding="5dp"
@@ -110,6 +115,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:text="Q\u0026A"/>
 
                 </LinearLayout>

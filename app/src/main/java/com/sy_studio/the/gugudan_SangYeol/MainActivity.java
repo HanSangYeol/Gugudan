@@ -81,7 +81,7 @@ public class MainActivity extends BaseActivity {
                 }
                 frags[0].setVisibility(View.VISIBLE);
                 text[0].setTypeface(null, Typeface.BOLD);
-                VideoFrag.youtubePlayer.pause();
+//                VideoFrag.youtubePlayer.pause();
             }
         };
 
@@ -99,9 +99,9 @@ public class MainActivity extends BaseActivity {
                 }
                 text[index].setTypeface(null, Typeface.BOLD);
                 frags[index].setVisibility(View.VISIBLE);
-                if (!(index == 3)){
-                    VideoFrag.youtubePlayer.pause();
-                }
+//                if (!(index == 3)){
+//                    VideoFrag.youtubePlayer.pause();
+//                }
 
             }
         };
