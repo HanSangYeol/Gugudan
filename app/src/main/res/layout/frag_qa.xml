@@ -1,57 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
         <LinearLayout
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/greenlight_round_box"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/greenlight_round_box"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/pencil_icon"/>
+                android:src="@drawable/pencil_icon" />
+
             <TextView
-                android:layout_marginLeft="5dp"
                 android:id="@+id/questionBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="글쓰기"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <EditText
-            android:background="@drawable/white_round_box"
-            android:layout_marginLeft="10dp"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"/>
-        <TextView
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/greenlight_round_box"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="검색"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <EditText
+                android:id="@+id/inputEdt"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/white_round_box" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/greenlight_round_box"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/searchBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="검색"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

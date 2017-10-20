@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/mint"
     android:orientation="vertical"
-    tools:context="com.sy_studio.the.gugudan_SangYeol.NaviActivity">
+    tools:context="com.sy_studio.the.gugudan_SangYeol.GalleryActivity">
 
     <LinearLayout
+        android:gravity="center|left"
         android:background="#64C3B8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
         <ImageView
             android:id="@+id/backBtn"
             android:layout_marginLeft="5dp"
@@ -20,9 +21,9 @@
             android:layout_height="40dp"
             android:src="@drawable/arrow_icon"/>
         <TextView
+            android:gravity="center"
             android:layout_marginLeft="10dp"
             android:id="@+id/confirmBtn"
-            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="갤러리"
@@ -58,15 +59,15 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/galleryLayout"
+                        android:id="@+id/pictureLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <fragment
-                            android:id="@+id/galleryFrag"
-                            class="com.sy_studio.the.gugudan_SangYeol.Fragment.GalleryFrag"
+                            android:id="@+id/pictureFrag"
+                            class="com.sy_studio.the.gugudan_SangYeol.Fragment.PictureFrag"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            tools:layout="@layout/frag_gallery"/>
+                            tools:layout="@layout/frag_picture"/>
                     </LinearLayout>
 
                 </LinearLayout>

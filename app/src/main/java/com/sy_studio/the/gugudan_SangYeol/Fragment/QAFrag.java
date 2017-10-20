@@ -7,12 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sy_studio.the.gugudan_SangYeol.Adapter.PostAdatper;
 import com.sy_studio.the.gugudan_SangYeol.Data.Post;
 import com.sy_studio.the.gugudan_SangYeol.R;
+import com.sy_studio.the.gugudan_SangYeol.SignActivity;
+import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 import com.sy_studio.the.gugudan_SangYeol.Util.GlobalData;
 import com.sy_studio.the.gugudan_SangYeol.WriteActivity;
 
@@ -29,11 +33,16 @@ public class QAFrag extends Fragment {
     private android.widget.ListView questionListView;
     PostAdatper postAdatper;
     List<Post> postList = new ArrayList<>();
+    public static android.widget.EditText inputEdt;
+    private TextView searchBtn;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_qa, container, false);
+        this.searchBtn = (TextView) view.findViewById(R.id.searchBtn);
+        this.inputEdt = (EditText) view.findViewById(R.id.inputEdt);
         this.questionListView = (ListView) view.findViewById(R.id.questionListView);
         this.questionBtn = (TextView) view.findViewById(R.id.questionBtn);
         return view;
@@ -54,6 +63,13 @@ public class QAFrag extends Fragment {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getActivity(), WriteActivity.class);
                 startActivity(myIntent);
+            }
+        });
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                inputEdt.setText("");
             }
         });
     }

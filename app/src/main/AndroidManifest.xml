@@ -27,7 +27,7 @@
             android:name=".SignUpActivity"
             android:theme="@style/hideTitleDialog" />
         <activity android:name=".SignActivity" />
-        <activity android:name=".NaviActivity"></activity>
+        <activity android:name=".GalleryActivity"></activity>
     </application>
 
 </manifest>

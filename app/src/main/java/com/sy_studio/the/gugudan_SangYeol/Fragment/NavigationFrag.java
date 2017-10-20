@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.sy_studio.the.gugudan_SangYeol.MainActivity;
-import com.sy_studio.the.gugudan_SangYeol.NaviActivity;
+import com.sy_studio.the.gugudan_SangYeol.GalleryActivity;
 import com.sy_studio.the.gugudan_SangYeol.R;
 
 /**
@@ -21,6 +21,9 @@ import com.sy_studio.the.gugudan_SangYeol.R;
  */
 
 public class NavigationFrag extends Fragment {
+
+    int galleryNum = 0;
+    int youtubeNum = 1;
 
     private android.widget.LinearLayout galleryBtn;
     private android.widget.LinearLayout youtubeBtn;
@@ -47,16 +50,18 @@ public class NavigationFrag extends Fragment {
         galleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getActivity(), NaviActivity.class);
+                Intent myIntent = new Intent(getActivity(), GalleryActivity.class);
                 MainActivity.mainDrawLayout.closeDrawer(GravityCompat.START);
+                myIntent.putExtra("TabHost", galleryNum);
                 startActivity(myIntent);
             }
         });
         youtubeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getActivity(), NaviActivity.class);
+                Intent myIntent = new Intent(getActivity(), GalleryActivity.class);
                 MainActivity.mainDrawLayout.closeDrawer(GravityCompat.START);
+                myIntent.putExtra("TabHost", youtubeNum);
                 startActivity(myIntent);
             }
         });

@@ -18,6 +18,8 @@ import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 public class VideoFrag extends Fragment {
 
+    private boolean interceptPlay = true;
+
     public static YouTubePlayer youtubePlayer;
     final String serverKey = "AIzaSyCBz3h4zx5wLkUyMZGB-NiahwezMEH6Hs4";
 

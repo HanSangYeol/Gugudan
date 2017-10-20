@@ -14,7 +14,6 @@ import android.widget.TabWidget;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.VideoFrag;
 import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 
 public class MainActivity extends BaseActivity {
@@ -36,11 +35,11 @@ public class MainActivity extends BaseActivity {
     private NavigationView naviView;
     public static DrawerLayout mainDrawLayout;
     private LinearLayout noticeLayout;
-    private LinearLayout galleryLayout;
     private LinearLayout memberLayout;
     private LinearLayout scheduleLayout;
     private LinearLayout qaFragLayout;
     private LinearLayout tab5;
+    private LinearLayout timeLineLayout;
 
 
     @Override
@@ -71,35 +70,12 @@ public class MainActivity extends BaseActivity {
                 startActivity(myIntent);
             }
         });
-        View.OnClickListener homeClickListener = new View.OnClickListener() {
+        homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LinearLayout[] frags = {noticeLayout, memberLayout, galleryLayout, scheduleLayout, qaFragLayout};
-                for (LinearLayout linearLayout : frags) {
-                    linearLayout.setVisibility(View.GONE);
-                }
-                frags[0].setVisibility(View.VISIBLE);
-//                VideoFrag.youtubePlayer.pause();
+                myTabHost.setCurrentTab(0);
             }
-        };
-
-        View.OnClickListener clickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int index = Integer.parseInt(view.getTag().toString());
-                LinearLayout[] frags = {noticeLayout, memberLayout, galleryLayout, scheduleLayout, qaFragLayout};
-                for (LinearLayout linearLayout : frags) {
-                    linearLayout.setVisibility(View.GONE);
-                }
-                frags[index].setVisibility(View.VISIBLE);
-//                if (!(index == 3)){
-//                    VideoFrag.youtubePlayer.pause();
-//                }
-
-            }
-        };
-
-        homeBtn.setOnClickListener(homeClickListener);
+        });
     }
 
 
@@ -111,6 +87,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void makeTabHost() {
+        myTabHost.setup();
+
         TabHost.TabSpec spec1 = myTabHost.newTabSpec("tab1").setIndicator("공지사항");
         spec1.setContent(R.id.tab1);
         myTabHost.addTab(spec1);
@@ -131,15 +109,11 @@ public class MainActivity extends BaseActivity {
         TabHost.TabSpec spec5 = myTabHost.newTabSpec("tab5").setIndicator("게시판");
         spec5.setContent(R.id.tab5);
         myTabHost.addTab(spec5);
+
     }
 
     public void homeChange(){
-        LinearLayout[] frags = {noticeLayout, memberLayout, galleryLayout, scheduleLayout, qaFragLayout};
-        for (LinearLayout linearLayout : frags) {
-            linearLayout.setVisibility(View.GONE);
-        }
-        frags[0].setVisibility(View.VISIBLE);
-        VideoFrag.youtubePlayer.pause();
+        myTabHost.setCurrentTab(0);
     }
 
     @Override
@@ -177,13 +151,12 @@ public class MainActivity extends BaseActivity {
         this.tab3 = (LinearLayout) findViewById(R.id.tab3);
         this.memberLayout = (LinearLayout) findViewById(R.id.memberLayout);
         this.tab2 = (LinearLayout) findViewById(R.id.tab2);
-        this.galleryLayout = (LinearLayout) findViewById(R.id.galleryLayout);
+        this.timeLineLayout = (LinearLayout) findViewById(R.id.timeLineLayout);
         this.tab1 = (LinearLayout) findViewById(R.id.tab1);
         this.noticeLayout = (LinearLayout) findViewById(R.id.noticeLayout);
         this.tabs = (TabWidget) findViewById(android.R.id.tabs);
         this.loginBtn = (ImageView) findViewById(R.id.loginBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
         this.allViewBtn = (ImageView) findViewById(R.id.allViewBtn);
-        myTabHost.setup();
     }
 }
