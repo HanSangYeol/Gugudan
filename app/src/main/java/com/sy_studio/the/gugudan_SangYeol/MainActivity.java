@@ -46,8 +46,10 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO - 동영상 데이터 추가
         // TODO - 갤러리 Glide사용
-        // TODO - 햄버거 메뉴(로그인/비로그인)
+        // TODO - 햄버거 메뉴(로그인/비로그인), setting 창 추가
         // TODO - 맴버 클릭하면 상세정보창
+        // TODO - https://github.com/astuetz/PagerSlidingTabStrip // PagerSlidingTabStrip 메인 TabHost, ViewPager
+        // TODO -
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bindView();
