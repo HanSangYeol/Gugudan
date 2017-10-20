@@ -11,22 +11,23 @@
         android:roundIcon="@drawable/gugudan_icon_1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.sy_studio.the.gugudan_SangYeol.MainActivity" />
-        <activity android:name="com.sy_studio.the.gugudan_SangYeol.SplashActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sy_studio.the.gugudan_SangYeol.WriteActivity" />
+        <activity android:name=".WriteActivity" />
         <activity
-            android:name="com.sy_studio.the.gugudan_SangYeol.LoginActivity"
+            android:name=".LoginActivity"
             android:theme="@style/hideTitleDialog" />
         <activity
-            android:name="com.sy_studio.the.gugudan_SangYeol.SignUpActivity"
+            android:name=".SignUpActivity"
             android:theme="@style/hideTitleDialog" />
-        <activity android:name="com.sy_studio.the.gugudan_SangYeol.SignActivity" />
+        <activity android:name=".SignActivity" />
+        <activity android:name=".NaviActivity"></activity>
     </application>
 
 </manifest>

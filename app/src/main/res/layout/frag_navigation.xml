@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="200dp"
+    android:orientation="vertical" android:layout_width="250dp"
     android:id="@+id/naviDrawLayout"
     android:layout_height="match_parent">
 
@@ -31,6 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:id="@+id/galleryBtn"
                         android:padding="5dp"
                         android:orientation="vertical"
                         android:gravity="center"
@@ -38,11 +39,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
                         <ImageView
+                            android:layout_margin="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:src="@mipmap/ic_launcher_round"/>
+                            android:src="@drawable/gallery_icon"/>
                         <TextView
+                            android:padding="5dp"
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -50,9 +53,10 @@
                             android:textStyle="bold"
                             android:textColor="@color/text_color"
                             android:textSize="16sp"
-                            android:text="사진"/>
+                            android:text="사진첩"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/youtubeBtn"
                         android:padding="5dp"
                         android:orientation="vertical"
                         android:gravity="center"
@@ -60,11 +64,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
                         <ImageView
+                            android:padding="8dp"
+                            android:layout_margin="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:src="@mipmap/ic_launcher_round"/>
+                            android:src="@drawable/youtube_logo"/>
                         <TextView
+                            android:padding="5dp"
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -72,7 +79,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/text_color"
                             android:textSize="16sp"
-                            android:text="동영상"/>
+                            android:text="YouTube"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -80,6 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:id="@+id/settingBtn"
                         android:padding="5dp"
                         android:orientation="vertical"
                         android:gravity="center"
@@ -87,11 +95,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
                         <ImageView
+                            android:layout_margin="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:src="@mipmap/ic_launcher_round"/>
+                            android:src="@drawable/setting"/>
                         <TextView
+                            android:padding="5dp"
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -110,11 +120,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
                         <ImageView
+                            android:layout_margin="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round"/>
                         <TextView
+                            android:padding="5dp"
                             android:gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
