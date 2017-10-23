@@ -53,7 +53,62 @@
                         android:src="@drawable/login_icon" />
                 </FrameLayout>
 
+                <LinearLayout
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="5dp"
+                        android:id="@+id/noticeBtn"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="공지사항"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:padding="5dp"
+                        android:id="@+id/memberBtn"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="타임라인"/>
+                    <TextView
+                        android:padding="5dp"
+                        android:id="@+id/galleryBtn"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="맴버"/>
+                    <TextView
+                        android:padding="5dp"
+                        android:id="@+id/videoBtn"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="스케줄"/>
+                    <TextView
+                        android:padding="5dp"
+                        android:id="@+id/scheduleBtn"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="게시판"/>
+
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
+
                 <TabHost
+                    android:visibility="gone"
                     android:id="@+id/myTabHost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -183,6 +238,12 @@
                         </FrameLayout>
                     </LinearLayout>
                 </TabHost>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/mainViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v4.view.ViewPager>
 
 
             </LinearLayout>

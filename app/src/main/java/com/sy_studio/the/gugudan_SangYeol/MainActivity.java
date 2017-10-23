@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -14,6 +15,7 @@ import android.widget.TabWidget;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.sy_studio.the.gugudan_SangYeol.Adapter.MainPageAdapter;
 import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 
 public class MainActivity extends BaseActivity {
@@ -40,6 +42,7 @@ public class MainActivity extends BaseActivity {
     private LinearLayout qaFragLayout;
     private LinearLayout tab5;
     private LinearLayout timeLineLayout;
+    private android.support.v4.view.ViewPager mainViewPager;
 
 
     @Override
@@ -83,6 +86,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+        mainViewPager.setAdapter(new MainPageAdapter(getSupportFragmentManager()));
+        mainViewPager.setCurrentItem(0);
         Glide.with(mContext).load(R.drawable.gugudan_icon_1).into(homeBtn);
         makeTabHost();
 
@@ -144,6 +149,7 @@ public class MainActivity extends BaseActivity {
         this.mainDrawLayout = (DrawerLayout) findViewById(R.id.mainDrawLayout);
         this.naviView = (NavigationView) findViewById(R.id.naviView);
         this.naviLaytout = (LinearLayout) findViewById(R.id.naviLaytout);
+        this.mainViewPager = (ViewPager) findViewById(R.id.mainViewPager);
         this.myTabHost = (TabHost) findViewById(R.id.myTabHost);
         this.tabcontent = (FrameLayout) findViewById(android.R.id.tabcontent);
         this.tab5 = (LinearLayout) findViewById(R.id.tab5);
