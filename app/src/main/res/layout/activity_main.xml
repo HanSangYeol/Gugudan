@@ -61,6 +61,7 @@
                     <TextView
                         android:padding="5dp"
                         android:id="@+id/noticeBtn"
+                        android:tag="0"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -69,7 +70,8 @@
                         android:textStyle="bold"/>
                     <TextView
                         android:padding="5dp"
-                        android:id="@+id/memberBtn"
+                        android:id="@+id/timeLineBtn"
+                        android:tag="1"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -77,7 +79,8 @@
                         android:text="타임라인"/>
                     <TextView
                         android:padding="5dp"
-                        android:id="@+id/galleryBtn"
+                        android:id="@+id/memberBtn"
+                        android:tag="2"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -85,7 +88,8 @@
                         android:text="맴버"/>
                     <TextView
                         android:padding="5dp"
-                        android:id="@+id/videoBtn"
+                        android:id="@+id/scheduleBtn"
+                        android:tag="3"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -93,7 +97,8 @@
                         android:text="스케줄"/>
                     <TextView
                         android:padding="5dp"
-                        android:id="@+id/scheduleBtn"
+                        android:id="@+id/qaBtn"
+                        android:tag="4"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -101,143 +106,8 @@
                         android:text="게시판"/>
 
                 </LinearLayout>
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </FrameLayout>
-
-                <TabHost
-                    android:visibility="gone"
-                    android:id="@+id/myTabHost"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TabWidget
-                            android:id="@android:id/tabs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <FrameLayout
-                            android:id="@android:id/tabcontent"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:id="@+id/tab1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:id="@+id/noticeLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <fragment
-                                        android:id="@+id/noticeFrag"
-                                        class="com.sy_studio.the.gugudan_SangYeol.Fragment.NoticeFrag"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        tools:layout="@layout/frag_notice" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/tab2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
 
 
-                                <LinearLayout
-                                    android:id="@+id/timeLineLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <fragment
-                                        android:id="@+id/timelineFrag"
-                                        class="com.sy_studio.the.gugudan_SangYeol.Fragment.TimeLineFrag"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        tools:layout="@layout/frag_timeline" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/tab3"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:id="@+id/memberLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <fragment
-                                        android:id="@+id/memberFrag"
-                                        class="com.sy_studio.the.gugudan_SangYeol.Fragment.MemberFrag"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        tools:layout="@layout/frag_member" />
-                                </LinearLayout>
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/tab4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:id="@+id/scheduleLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <fragment
-                                        android:id="@+id/scheduleFrag"
-                                        class="com.sy_studio.the.gugudan_SangYeol.Fragment.ScheduleFrag"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        tools:layout="@layout/frag_scheduel" />
-                                </LinearLayout>
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/tab5"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:id="@+id/qaFragLayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <fragment
-                                        android:id="@+id/qAFrag"
-                                        class="com.sy_studio.the.gugudan_SangYeol.Fragment.QAFrag"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        tools:layout="@layout/frag_qa" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </FrameLayout>
-                    </LinearLayout>
-                </TabHost>
                 <android.support.v4.view.ViewPager
                     android:id="@+id/mainViewPager"
                     android:layout_width="match_parent"
