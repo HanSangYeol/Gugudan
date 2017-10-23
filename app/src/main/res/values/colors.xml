@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#64C3B8</color>
-    <color name="colorAccent">#64C3B8</color>
+    <color name="colorPrimaryDark">#EAA0B1</color>
+    <color name="colorAccent">#EAA0B1</color>
     <color name="mint">#DFFFFA</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="text_color">#25717E</color>
     <color name="divider_line">#C0D9DF</color>
+    <color name="pink">#F1D0D7</color>
+    <color name="hot_pink">#EAA0B1</color>
 </resources>

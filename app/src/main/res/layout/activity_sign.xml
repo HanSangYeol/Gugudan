@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/mint"
+    android:background="@drawable/background_color"
     tools:context="com.sy_studio.the.gugudan_SangYeol.SignActivity">
 
     <ImageView
@@ -29,7 +29,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="로그인"
-            android:background="@drawable/mint_round_box"
+            android:background="@drawable/pink_round_box"
             android:textStyle="bold"/>
         <Button
             android:id="@+id/signupBtn"
@@ -39,7 +39,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="간편 가입"
-            android:background="@drawable/mint_round_box"
+            android:background="@drawable/pink_round_box"
             android:textStyle="bold"/>
     </LinearLayout>
 

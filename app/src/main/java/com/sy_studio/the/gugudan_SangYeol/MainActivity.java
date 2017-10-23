@@ -14,6 +14,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.bumptech.glide.Glide;
 import com.sy_studio.the.gugudan_SangYeol.Adapter.MainPageAdapter;
 import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
@@ -31,11 +32,8 @@ public class MainActivity extends BaseActivity {
     private NavigationView naviView;
     public static DrawerLayout mainDrawLayout;
     private android.support.v4.view.ViewPager mainViewPager;
-    private android.widget.TextView noticeBtn;
-    private android.widget.TextView memberBtn;
-    private android.widget.TextView scheduleBtn;
-    private TextView timeLineBtn;
-    private TextView qaBtn;
+    private com.astuetz.PagerSlidingTabStrip tabs;
+
 
 
     @Override
@@ -55,25 +53,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
-        View.OnClickListener clickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int index = Integer.parseInt(view.getTag().toString());
-                TextView[] text = {noticeBtn, timeLineBtn, memberBtn, scheduleBtn, qaBtn};
-                for (TextView textView : text) {
-                    textView.setTypeface(null, Typeface.NORMAL);
-                }
-                text[index].setTypeface(null, Typeface.BOLD);
-                mainViewPager.setCurrentItem(index);
-
-            }
-        };
-
-        noticeBtn.setOnClickListener(clickListener);
-        timeLineBtn.setOnClickListener(clickListener);
-        memberBtn.setOnClickListener(clickListener);
-        scheduleBtn.setOnClickListener(clickListener);
-        qaBtn.setOnClickListener(clickListener);
 
         allViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,27 +80,7 @@ public class MainActivity extends BaseActivity {
     public void setValues() {
         mainViewPager.setAdapter(new MainPageAdapter(getSupportFragmentManager()));
         mainViewPager.setCurrentItem(0);
-        mainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                TextView[] text = {noticeBtn, timeLineBtn, memberBtn, scheduleBtn, qaBtn};
-                for (TextView textView : text) {
-                    textView.setTypeface(null, Typeface.NORMAL);
-                }
-                text[position].setTypeface(null, Typeface.BOLD);
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-        Glide.with(mContext).load(R.drawable.gugudan_icon_1).into(homeBtn);
+        tabs.setViewPager(mainViewPager);
 
     }
 
@@ -157,11 +116,7 @@ public class MainActivity extends BaseActivity {
         this.naviView = (NavigationView) findViewById(R.id.naviView);
         this.naviLaytout = (LinearLayout) findViewById(R.id.naviLaytout);
         this.mainViewPager = (ViewPager) findViewById(R.id.mainViewPager);
-        this.qaBtn = (TextView) findViewById(R.id.qaBtn);
-        this.scheduleBtn = (TextView) findViewById(R.id.scheduleBtn);
-        this.memberBtn = (TextView) findViewById(R.id.memberBtn);
-        this.timeLineBtn = (TextView) findViewById(R.id.timeLineBtn);
-        this.noticeBtn = (TextView) findViewById(R.id.noticeBtn);
+        this.tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         this.loginBtn = (ImageView) findViewById(R.id.loginBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
         this.allViewBtn = (ImageView) findViewById(R.id.allViewBtn);

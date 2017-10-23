@@ -2,6 +2,7 @@ package com.sy_studio.the.gugudan_SangYeol.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.sy_studio.the.gugudan_SangYeol.Fragment.MemberFrag;
@@ -16,7 +17,9 @@ import com.sy_studio.the.gugudan_SangYeol.Fragment.VideoFrag;
  * Created by the on 2017-10-23.
  */
 
-public class GalleryPageAdapter extends FragmentStatePagerAdapter {
+public class GalleryPageAdapter extends FragmentPagerAdapter {
+    final int PAGE_COUNT = 2;
+    private String tabTitles[] = new String[] { "사진", "동영상" };
 
     public GalleryPageAdapter(FragmentManager fm){
         super(fm);
@@ -24,7 +27,7 @@ public class GalleryPageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return PAGE_COUNT;
     }
 
 
@@ -38,5 +41,11 @@ public class GalleryPageAdapter extends FragmentStatePagerAdapter {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        // Generate title based on item position
+        return tabTitles[position];
     }
 }
