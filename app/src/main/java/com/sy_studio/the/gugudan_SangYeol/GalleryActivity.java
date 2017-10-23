@@ -1,36 +1,29 @@
 package com.sy_studio.the.gugudan_SangYeol;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 
-import com.sy_studio.the.gugudan_SangYeol.Fragment.VideoFrag;
+import com.sy_studio.the.gugudan_SangYeol.Adapter.GalleryPageAdapter;
 
 public class GalleryActivity extends BaseActivity {
 
     int tempNum;
+    private ImageView backBtn;
+    private TextView confirmBtn;
+    private TextView pictureBtn;
+    private TextView videoBtn;
+    private android.support.v4.view.ViewPager galleryViewPager;
 
-    private android.widget.ImageView backBtn;
-    private android.widget.TextView confirmBtn;
-    private android.widget.TabWidget tabs;
-    private android.widget.LinearLayout galleryLayout;
-    private android.widget.LinearLayout tab1;
-    private android.widget.LinearLayout videoLayout;
-    private android.widget.LinearLayout tab2;
-    private android.widget.FrameLayout tabcontent;
-    private android.widget.TabHost myTabHost;
-    private LinearLayout pictureLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-        tempNum = getIntent().getIntExtra("TabHost", 0);
+        tempNum = getIntent().getIntExtra("ViewPager", 0);
         bindView();
         setupEvents();
         setValues();
@@ -38,6 +31,23 @@ public class GalleryActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+        View.OnClickListener clickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int index = Integer.parseInt(view.getTag().toString());
+                TextView[] text = {pictureBtn, videoBtn};
+                for (TextView textView : text) {
+                    textView.setTypeface(null, Typeface.NORMAL);
+                }
+                text[index].setTypeface(null, Typeface.BOLD);
+                galleryViewPager.setCurrentItem(index);
+
+            }
+        };
+
+        pictureBtn.setOnClickListener(clickListener);
+        videoBtn.setOnClickListener(clickListener);
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,41 +59,37 @@ public class GalleryActivity extends BaseActivity {
 
     @Override
     public void setValues() {
-        makeTabHost();
-
-        myTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+        galleryViewPager.setAdapter(new GalleryPageAdapter(getSupportFragmentManager()));
+        galleryViewPager.setCurrentItem(tempNum);
+        galleryViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onTabChanged(String s) {
-                VideoFrag.youtubePlayer.pause();
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                TextView[] text = {pictureBtn, videoBtn};
+                for (TextView textView : text) {
+                    textView.setTypeface(null, Typeface.NORMAL);
+                }
+                text[position].setTypeface(null, Typeface.BOLD);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
 
 
     }
 
-    private void makeTabHost() {
-        myTabHost.setup();
-
-        TabHost.TabSpec spec1 = myTabHost.newTabSpec("tab1").setIndicator("사진");
-        spec1.setContent(R.id.tab1);
-        myTabHost.addTab(spec1);
-
-        TabHost.TabSpec spec2 = myTabHost.newTabSpec("tab2").setIndicator("동영상");
-        spec2.setContent(R.id.tab2);
-        myTabHost.addTab(spec2);
-
-        myTabHost.setCurrentTab(tempNum);
-    }
-
     @Override
     public void bindView() {
-        this.myTabHost = (TabHost) findViewById(R.id.myTabHost);
-        this.tabcontent = (FrameLayout) findViewById(android.R.id.tabcontent);
-        this.tab2 = (LinearLayout) findViewById(R.id.tab2);
-        this.videoLayout = (LinearLayout) findViewById(R.id.videoLayout);
-        this.tab1 = (LinearLayout) findViewById(R.id.tab1);
-        this.pictureLayout = (LinearLayout) findViewById(R.id.pictureLayout);
-        this.tabs = (TabWidget) findViewById(android.R.id.tabs);
+        this.galleryViewPager = (ViewPager) findViewById(R.id.galleryViewPager);
+        this.videoBtn = (TextView) findViewById(R.id.videoBtn);
+        this.pictureBtn = (TextView) findViewById(R.id.pictureBtn);
         this.confirmBtn = (TextView) findViewById(R.id.confirmBtn);
         this.backBtn = (ImageView) findViewById(R.id.backBtn);
     }

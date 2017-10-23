@@ -52,7 +52,7 @@ public class NavigationFrag extends Fragment {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getActivity(), GalleryActivity.class);
                 MainActivity.mainDrawLayout.closeDrawer(GravityCompat.START);
-                myIntent.putExtra("TabHost", galleryNum);
+                myIntent.putExtra("ViewPager", galleryNum);
                 startActivity(myIntent);
             }
         });
@@ -61,7 +61,7 @@ public class NavigationFrag extends Fragment {
             public void onClick(View view) {
                 Intent myIntent = new Intent(getActivity(), GalleryActivity.class);
                 MainActivity.mainDrawLayout.closeDrawer(GravityCompat.START);
-                myIntent.putExtra("TabHost", youtubeNum);
+                myIntent.putExtra("ViewPager", youtubeNum);
                 startActivity(myIntent);
             }
         });
