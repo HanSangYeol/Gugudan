@@ -28,6 +28,7 @@ public class VideoFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_video, container, false);
         return view;
+
     }
 
     @Override
@@ -42,6 +43,7 @@ public class VideoFrag extends Fragment {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer youTubePlayer, boolean b) {
                 youtubePlayer = youTubePlayer;
                 youtubePlayer.cueVideo("ZN6aso7870c");
+//                youtubePlayer.cuePlaylist("PLieD_nuzcjSc6iAjo06fX2zFIQX8GLVQO");
 
 
             }
