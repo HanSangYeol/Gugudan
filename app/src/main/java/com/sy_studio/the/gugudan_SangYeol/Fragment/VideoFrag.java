@@ -1,5 +1,6 @@
 package com.sy_studio.the.gugudan_SangYeol.Fragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,10 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sy_studio.the.gugudan_SangYeol.Data.VideoData;
 import com.sy_studio.the.gugudan_SangYeol.R;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.sy_studio.the.gugudan_SangYeol.Util.DrawableManager;
+
+import java.util.ArrayList;
 
 /**
  * Created by the on 2017-10-17.
@@ -21,7 +26,10 @@ public class VideoFrag extends Fragment {
     private boolean interceptPlay = true;
 
     public static YouTubePlayer youtubePlayer;
-    final String serverKey = "AIzaSyCBz3h4zx5wLkUyMZGB-NiahwezMEH6Hs4";
+    static DrawableManager DM = new DrawableManager();
+    final String serverKey = "AIzaSyD-ie2ywfIybH6zkUAiFpTGvMrdLb_sTtQ";
+    ArrayList<VideoData> sdata = new ArrayList<VideoData>();
+    AsyncTask<?, ?, ?> searchTask;
 
     @Nullable
     @Override
