@@ -1,12 +1,15 @@
 package com.sy_studio.the.gugudan_SangYeol.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.sy_studio.the.gugudan_SangYeol.R;
 
 /**
@@ -45,7 +48,8 @@ public class GalleryAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
 
-        imageView.setImageResource(mThumbIds[position]);
+        Glide.with(mContext).load(mThumbIds[position]).into(imageView);
+
         return imageView;
     }
 
@@ -54,4 +58,9 @@ public class GalleryAdapter extends BaseAdapter {
             R.drawable.view7, R.drawable.view8, R.drawable.view9,
             R.drawable.view10, R.drawable.view11, R.drawable.view12,
             R.drawable.view13, R.drawable.view14, R.drawable.view15};
+
+
+
+
+
 }
