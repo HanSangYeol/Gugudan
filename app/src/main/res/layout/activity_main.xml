@@ -89,7 +89,7 @@
 
                 <fragment
                     android:id="@+id/naviFragment"
-                    class="com.sy_studio.the.gugudan_SangYeol.Fragment.NavigationFrag"
+                    class="com.sy_studio.the.gugudan_SangYeol.NaviFragment.NavigationFrag"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:layout="@layout/frag_navigation" />

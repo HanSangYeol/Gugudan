@@ -3,15 +3,9 @@ package com.sy_studio.the.gugudan_SangYeol.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.sy_studio.the.gugudan_SangYeol.Fragment.MemberFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.NoticeFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.PictureFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.QAFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.ScheduleFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.TimeLineFrag;
-import com.sy_studio.the.gugudan_SangYeol.Fragment.VideoFrag;
+import com.sy_studio.the.gugudan_SangYeol.NaviFragment.PictureFrag;
+import com.sy_studio.the.gugudan_SangYeol.NaviFragment.VideoFrag;
 
 /**
  * Created by the on 2017-10-23.

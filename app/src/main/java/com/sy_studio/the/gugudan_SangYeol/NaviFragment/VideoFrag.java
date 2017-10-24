@@ -1,4 +1,4 @@
-package com.sy_studio.the.gugudan_SangYeol.Fragment;
+package com.sy_studio.the.gugudan_SangYeol.NaviFragment;
 
 import android.content.Context;
 import android.content.Intent;
