@@ -27,7 +27,9 @@
             android:name=".SignUpActivity"
             android:theme="@style/hideTitleDialog" />
         <activity android:name=".SignActivity" />
-        <activity android:name=".GalleryActivity"></activity>
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".YouTubePlayActivity" />
+        <activity android:name=".YoutubeActivity"></activity>
     </application>
 
 </manifest>
