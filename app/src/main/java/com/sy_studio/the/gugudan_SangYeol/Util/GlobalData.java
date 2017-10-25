@@ -1,6 +1,7 @@
 package com.sy_studio.the.gugudan_SangYeol.Util;
 
 
+import com.sy_studio.the.gugudan_SangYeol.Data.TimeLine;
 import com.sy_studio.the.gugudan_SangYeol.Data.Member;
 import com.sy_studio.the.gugudan_SangYeol.Data.Notice;
 import com.sy_studio.the.gugudan_SangYeol.Data.WritePost;
@@ -21,6 +22,11 @@ public class GlobalData {
     public static List<Notice> noticeList = new ArrayList<>();
     public static List<User> userList = new ArrayList<>();
     public static List<WritePost> writePostList = new ArrayList<>();
+    public static List<TimeLine> timeLineList = new ArrayList<>();
+
+    public static void timeLineData(){
+        timeLineList.clear();
+    }
 
     public static void postData(){
         writePostList.clear();

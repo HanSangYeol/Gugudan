@@ -22,6 +22,95 @@ public class ServerUtil {
         void onResponse(JSONObject json);
     }
 
+    // 페이스북 페이지 이미지 가져오기
+    public static void get_facebook_img(final Context context, final int id , final JsonResponseHandler handler) {
+//        기능에 따라 매번 주소를 다르게 적어줘야함.
+        String url =  "https://graph.facebook.com/v2.2/"+id+"?fields=attachments&fields=attachments&access_token="+ContextUtil.access_token;
+
+//        기능을 사용하기 위해 필요한 데이터를 담는 부분.
+
+//        Map<String, String> data = new HashMap<String, String>();
+////        data.put("version", "1");
+////        data.put("lat", "37.610465");
+//        data.put("lon", "126.928954");
+
+        AsyncHttpRequest.get(context, url,  null, true, new AsyncHttpRequest.HttpResponseHandler() {
+
+            @Override
+            public boolean onPrepare() {
+                return true;
+            }
+
+            @Override
+            public void onResponse(String response) {
+                System.out.println(response);
+                try {
+                    JSONObject json = new JSONObject(response);
+
+                    if (handler != null)
+                        handler.onResponse(json);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFinish() {
+
+            }
+
+            @Override
+            public void onCancelled() {
+
+            }
+
+        });
+    }
+
+    // 페이스북 페이지 게시글 가져오기
+    public static void get_facebook_data(final Context context,  final JsonResponseHandler handler) {
+//        기능에 따라 매번 주소를 다르게 적어줘야함.
+        String url =  "https://graph.facebook.com/v2.10/245682955804231/feed?access_token=503180196705632%7CcAxq4j6NWTm2f4St3r-kyDg3EDQ";
+
+//        기능을 사용하기 위해 필요한 데이터를 담는 부분.
+
+//        Map<String, String> data = new HashMap<String, String>();
+////        data.put("version", "1");
+////        data.put("lat", "37.610465");
+//        data.put("lon", "126.928954");
+
+        AsyncHttpRequest.get(context, url,  null, true, new AsyncHttpRequest.HttpResponseHandler() {
+
+            @Override
+            public boolean onPrepare() {
+                return true;
+            }
+
+            @Override
+            public void onResponse(String response) {
+                System.out.println(response);
+                try {
+                    JSONObject json = new JSONObject(response);
+
+                    if (handler != null)
+                        handler.onResponse(json);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFinish() {
+
+            }
+
+            @Override
+            public void onCancelled() {
+
+            }
+
+        });
+    }
+
+
     public static void FacebookAccessToken(final Context context,  final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
         String url =  "https://graph.facebook.com/oauth/access_token?client_id=503180196705632&client_secret=b2a05f31702a97e9685529300b5f9c71&grant_type=client_credentials";

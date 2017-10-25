@@ -1,28 +1,56 @@
 package com.sy_studio.the.gugudan_SangYeol.Data;
 
-import java.util.Calendar;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by the on 2017-10-25.
  */
 
-public class Facebook {
+public class TimeLine {
 
+    private int id;
     private String profileUrl;
     private String name;
     private String date;
     private String contentImg;
     private String contentTxt;
 
-    public Facebook() {
+    public TimeLine() {
     }
 
-    public Facebook(String profileUrl, String name, String date, String contentImg, String contentTxt) {
+    public TimeLine(int id, String profileUrl, String name, String date, String contentImg, String contentTxt) {
+        this.id = id;
         this.profileUrl = profileUrl;
         this.name = name;
         this.date = date;
         this.contentImg = contentImg;
         this.contentTxt = contentTxt;
+    }
+
+    public static TimeLine gettimeLineFromJSON(JSONObject json){
+        TimeLine timeLine = new TimeLine();
+
+        try {
+            String date = json.getString("created_time").substring(0, 10);
+            timeLine.date = date;
+            timeLine.contentTxt = json.getString("message");
+            timeLine.id = json.getInt("id");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return timeLine;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getProfileUrl() {
