@@ -160,6 +160,8 @@ public class VideoFrag extends Fragment {
     private void paringJsonData(JSONObject jsonObject) throws JSONException {
         sdata.clear();
 
+        Log.d("JSON", jsonObject.toString());
+
         JSONArray contacts = jsonObject.getJSONArray("items");
 
         for (int i = 0; i < contacts.length(); i++) {
@@ -181,8 +183,12 @@ public class VideoFrag extends Fragment {
                     .getJSONObject("thumbnails").getJSONObject("default")
                     .getString("url"); // 썸내일 이미지 URL값
 
+            String channelTitle = c.getJSONObject("snippet").getString("channelTitle");
+
+            String id = c.getString("id");
+
             Log.d("Youtube", "제목 : " + title);
-            sdata.add(new VideoData("", changString, imgUrl, date));
+            sdata.add(new VideoData(title, channelTitle, id, imgUrl, date));
 
         }
     }
@@ -239,6 +245,7 @@ public class VideoFrag extends Fragment {
             ((TextView) v.findViewById(R.id.title)).setText(fInfo.getTitle());
             ((TextView) v.findViewById(R.id.date)).setText(fInfo
                     .getPublishedAt());
+            ((TextView) v.findViewById(R.id.channalTitle)).setText(fInfo.getChannelTitle());
 
             return v;
         }

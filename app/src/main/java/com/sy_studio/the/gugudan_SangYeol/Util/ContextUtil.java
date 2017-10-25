@@ -11,6 +11,8 @@ import com.sy_studio.the.gugudan_SangYeol.Data.User;
 
 public class ContextUtil {
 
+    public static String access_token;
+
     private static User loginUser = null;
     private static final String prefName = "Gugudan";
 

@@ -74,11 +74,11 @@
         This is the place to put custom intermediary targets such as:
             -pre-build
             -pre-compile
-            -post-compile (This is typically used for code obfuscation.
+            -writePost-compile (This is typically used for code obfuscation.
                            Compiled code location: ${out.classes.absolute.dir}
                            If this is not done in place, override ${out.dex.input.absolute.dir})
-            -post-package
-            -post-build
+            -writePost-package
+            -writePost-build
             -pre-clean
     -->
     <import file="custom_rules.xml" optional="true" />

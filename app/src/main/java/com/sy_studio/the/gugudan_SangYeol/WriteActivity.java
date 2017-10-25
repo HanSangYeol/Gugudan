@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sy_studio.the.gugudan_SangYeol.Data.Post;
+import com.sy_studio.the.gugudan_SangYeol.Data.WritePost;
 import com.sy_studio.the.gugudan_SangYeol.Util.GlobalData;
 
 public class WriteActivity extends BaseActivity {
@@ -48,7 +48,7 @@ public class WriteActivity extends BaseActivity {
                     checkContent = false;
                 }
                 if (checkTitle && checkContent){
-                    GlobalData.postList.add(new Post(titleEdt.getText().toString(), contentEdt.getText().toString()));
+                    GlobalData.writePostList.add(new WritePost(titleEdt.getText().toString(), contentEdt.getText().toString()));
                     Toast.makeText(mContext, "게시글 작성 완료", Toast.LENGTH_SHORT).show();
                     finish();
                 }

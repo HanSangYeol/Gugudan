@@ -56,7 +56,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements
         ytp = arg1;
 
         Intent gt = getIntent();
-        ytp.loadVideo(gt.getStringExtra("id"));
+        ytp.loadPlaylist(gt.getStringExtra("id"));
 
     }
 

@@ -3,7 +3,7 @@ package com.sy_studio.the.gugudan_SangYeol.Util;
 
 import com.sy_studio.the.gugudan_SangYeol.Data.Member;
 import com.sy_studio.the.gugudan_SangYeol.Data.Notice;
-import com.sy_studio.the.gugudan_SangYeol.Data.Post;
+import com.sy_studio.the.gugudan_SangYeol.Data.WritePost;
 import com.sy_studio.the.gugudan_SangYeol.Data.User;
 import com.sy_studio.the.gugudan_SangYeol.R;
 
@@ -20,11 +20,11 @@ public class GlobalData {
     public static List<Member> memberList = new ArrayList<>();
     public static List<Notice> noticeList = new ArrayList<>();
     public static List<User> userList = new ArrayList<>();
-    public static List<Post> postList = new ArrayList<>();
+    public static List<WritePost> writePostList = new ArrayList<>();
 
     public static void postData(){
-        postList.clear();
-        postList.add(new Post("질문답변 게시판 공지사항 (2016.06.17ver)", ""));
+        writePostList.clear();
+        writePostList.add(new WritePost("질문답변 게시판 공지사항 (2016.06.17ver)", ""));
     }
 
     public static void userData(){

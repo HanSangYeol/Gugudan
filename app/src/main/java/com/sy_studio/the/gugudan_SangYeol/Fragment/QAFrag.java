@@ -10,13 +10,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sy_studio.the.gugudan_SangYeol.Adapter.PostAdatper;
-import com.sy_studio.the.gugudan_SangYeol.Data.Post;
+import com.sy_studio.the.gugudan_SangYeol.Data.WritePost;
 import com.sy_studio.the.gugudan_SangYeol.R;
-import com.sy_studio.the.gugudan_SangYeol.SignActivity;
-import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 import com.sy_studio.the.gugudan_SangYeol.Util.GlobalData;
 import com.sy_studio.the.gugudan_SangYeol.WriteActivity;
 
@@ -32,7 +29,7 @@ public class QAFrag extends Fragment {
     private android.widget.TextView questionBtn;
     private android.widget.ListView questionListView;
     PostAdatper postAdatper;
-    List<Post> postList = new ArrayList<>();
+    List<WritePost> writePostList = new ArrayList<>();
     public static android.widget.EditText inputEdt;
     private TextView searchBtn;
 
@@ -75,20 +72,20 @@ public class QAFrag extends Fragment {
     }
 
     private void setValues() {
-        postList.addAll(GlobalData.postList);
+        writePostList.addAll(GlobalData.writePostList);
 
-        postAdatper = new PostAdatper(getActivity(), postList);
+        postAdatper = new PostAdatper(getActivity(), writePostList);
         questionListView.setAdapter(postAdatper);
 
     }
 
     @Override
     public void onResume() {
-        postList.clear();
-//        postList.addAll(GlobalData.postList);
-        for (int i = GlobalData.postList.size()-1; i >= 0; i--){
-            Post post = GlobalData.postList.get(i);
-            postList.add(post);
+        writePostList.clear();
+//        writePostList.addAll(GlobalData.writePostList);
+        for (int i = GlobalData.writePostList.size()-1; i >= 0; i--){
+            WritePost writePost = GlobalData.writePostList.get(i);
+            writePostList.add(writePost);
         }
         postAdatper.notifyDataSetChanged();
         super.onResume();

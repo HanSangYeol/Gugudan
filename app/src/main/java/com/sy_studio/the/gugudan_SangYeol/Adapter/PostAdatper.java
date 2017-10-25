@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.sy_studio.the.gugudan_SangYeol.Data.Post;
+import com.sy_studio.the.gugudan_SangYeol.Data.WritePost;
 import com.sy_studio.the.gugudan_SangYeol.R;
 
 import java.util.List;
@@ -17,13 +17,13 @@ import java.util.List;
  * Created by the on 2017-10-18.
  */
 
-public class PostAdatper extends ArrayAdapter<Post> {
+public class PostAdatper extends ArrayAdapter<WritePost> {
 
     Context mContext;
-    List<Post> mList;
+    List<WritePost> mList;
     LayoutInflater inf;
 
-    public PostAdatper(Context context, List<Post> list) {
+    public PostAdatper(Context context, List<WritePost> list) {
         super(context, R.layout.post_item, list);
         this.mContext = context;
         mList = list;
@@ -38,7 +38,7 @@ public class PostAdatper extends ArrayAdapter<Post> {
             row = inf.inflate( R.layout.post_item, null);
         }
 
-        Post data = mList.get(position);
+        WritePost data = mList.get(position);
 
         TextView qaNumberTxt = (TextView)row.findViewById(R.id.qaNumberTxt);
         TextView qatitleTxt = (TextView)row.findViewById(R.id.qatitleTxt);

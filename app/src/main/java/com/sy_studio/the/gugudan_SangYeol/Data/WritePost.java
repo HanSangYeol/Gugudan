@@ -4,14 +4,14 @@ package com.sy_studio.the.gugudan_SangYeol.Data;
  * Created by the on 2017-10-18.
  */
 
-public class Post {
+public class WritePost {
     private String title;
     private String content;
 
-    public Post() {
+    public WritePost() {
     }
 
-    public Post(String title, String content) {
+    public WritePost(String title, String content) {
         this.title = title;
         this.content = content;
     }

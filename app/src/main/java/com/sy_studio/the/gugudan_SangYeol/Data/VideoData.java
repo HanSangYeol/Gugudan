@@ -6,6 +6,7 @@ package com.sy_studio.the.gugudan_SangYeol.Data;
 
 public class VideoData  {
     private String Title;
+    private String channelTitle;
     private String VideoId;
     private String Url;
     private String publishedAt;
@@ -13,11 +14,20 @@ public class VideoData  {
     public VideoData() {
     }
 
-    public VideoData(String title, String videoId, String url, String publishedAt) {
+    public VideoData(String title, String channelTitle, String videoId, String url, String publishedAt) {
         Title = title;
+        this.channelTitle = channelTitle;
         VideoId = videoId;
         Url = url;
         this.publishedAt = publishedAt;
+    }
+
+    public String getChannelTitle() {
+        return channelTitle;
+    }
+
+    public void setChannelTitle(String channelTitle) {
+        this.channelTitle = channelTitle;
     }
 
     public String getTitle() {

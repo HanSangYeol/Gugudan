@@ -6,7 +6,12 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 import com.sy_studio.the.gugudan_SangYeol.Util.GlobalData;
+import com.sy_studio.the.gugudan_SangYeol.Util.ServerUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SplashActivity extends BaseActivity {
 
@@ -45,6 +50,18 @@ public class SplashActivity extends BaseActivity {
         }, 2000);
 
         Glide.with(mContext).load(R.drawable.gugudan_icon_1).into(iconImg);
+
+        ServerUtil.FacebookAccessToken(mContext, new ServerUtil.JsonResponseHandler() {
+            @Override
+            public void onResponse(JSONObject json) {
+                try {
+                    ContextUtil.access_token =  json.getString("access_token");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
 
     }
 
