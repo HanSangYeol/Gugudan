@@ -64,7 +64,11 @@ public class TimeLineFrag extends Fragment {
                 try {
                     // JSONArray형태로 저장되있는 데이터들을 stores에 저장
                     JSONArray timeLine = json.getJSONArray("data");
-                    for (int i = timeLine.length()-1; i >= 0 ; i-- ) {
+//                    for (int i = timeLine.length()-1; i >= 0 ; i-- ) {
+//                        TimeLine facebook = TimeLine.gettimeLineFromJSON(timeLine.getJSONObject(i));
+//                        GlobalData.timeLineList.add(facebook);
+//                    }
+                    for (int i = 0; i < timeLine.length() ; i++ ) {
                         TimeLine facebook = TimeLine.gettimeLineFromJSON(timeLine.getJSONObject(i));
                         GlobalData.timeLineList.add(facebook);
                     }

@@ -2,6 +2,9 @@ package com.sy_studio.the.gugudan_SangYeol.Util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.util.Log;
+
+import com.sy_studio.the.gugudan_SangYeol.Data.TimeLine;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,10 +26,11 @@ public class ServerUtil {
     }
 
     // 페이스북 페이지 이미지 가져오기
-    public static void get_facebook_img(final Context context, final int id , final JsonResponseHandler handler) {
+    public static void get_facebook_img(final Context context, final String id , final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
-        String url =  "https://graph.facebook.com/v2.2/"+id+"?fields=attachments&fields=attachments&access_token="+ContextUtil.access_token;
+        String url =  "https://graph.facebook.com/v2.10/"+id+"?fields=attachments&fields=attachments&access_token="+ContextUtil.access_token;
 
+        Log.d("url", url);
 //        기능을 사용하기 위해 필요한 데이터를 담는 부분.
 
 //        Map<String, String> data = new HashMap<String, String>();
@@ -69,7 +73,7 @@ public class ServerUtil {
     // 페이스북 페이지 게시글 가져오기
     public static void get_facebook_data(final Context context,  final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
-        String url =  "https://graph.facebook.com/v2.10/245682955804231/feed?access_token=503180196705632%7CcAxq4j6NWTm2f4St3r-kyDg3EDQ";
+        String url =  "https://graph.facebook.com/v2.10/245682955804231/feed?access_token="+ContextUtil.access_token;
 
 //        기능을 사용하기 위해 필요한 데이터를 담는 부분.
 

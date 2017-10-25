@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 public class TimeLine {
 
-    private int id;
+    private String id;
     private String profileUrl;
     private String name;
     private String date;
@@ -19,7 +19,7 @@ public class TimeLine {
     public TimeLine() {
     }
 
-    public TimeLine(int id, String profileUrl, String name, String date, String contentImg, String contentTxt) {
+    public TimeLine(String id, String profileUrl, String name, String date, String contentImg, String contentTxt) {
         this.id = id;
         this.profileUrl = profileUrl;
         this.name = name;
@@ -35,7 +35,7 @@ public class TimeLine {
             String date = json.getString("created_time").substring(0, 10);
             timeLine.date = date;
             timeLine.contentTxt = json.getString("message");
-            timeLine.id = json.getInt("id");
+            timeLine.id = json.getString("id");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -45,11 +45,11 @@ public class TimeLine {
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
