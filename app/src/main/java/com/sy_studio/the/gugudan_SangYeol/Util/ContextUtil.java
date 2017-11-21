@@ -10,6 +10,7 @@ import com.sy_studio.the.gugudan_SangYeol.Data.User;
  */
 
 public class ContextUtil {
+    // user의 자동생성된 id값을 저장하는 변수 생성
 
     public static String access_token;
     public static int postingId;

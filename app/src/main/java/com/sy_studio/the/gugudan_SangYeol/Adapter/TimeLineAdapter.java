@@ -54,6 +54,8 @@ public class TimeLineAdapter extends ArrayAdapter<TimeLine>{
 
         dateTxt.setText(data.getDate());
         contentTxt.setText(data.getContentTxt());
+        Glide.with(mContext).load(R.drawable.gugudan_icon_1).into(profileImg);
+        nameTxt.setText("구구단 gugudan");
 
         ServerUtil.get_facebook_img(mContext, data.getId(), new ServerUtil.JsonResponseHandler() {
             @Override

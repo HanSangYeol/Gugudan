@@ -13,7 +13,6 @@ import com.sy_studio.the.gugudan_SangYeol.NaviFragment.VideoFrag;
 
 public class GalleryPageAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 2;
-    private String tabTitles[] = new String[] { "사진", "동영상" };
 
     public GalleryPageAdapter(FragmentManager fm){
         super(fm);
@@ -37,9 +36,4 @@ public class GalleryPageAdapter extends FragmentPagerAdapter {
         }
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
-        return tabTitles[position];
-    }
 }

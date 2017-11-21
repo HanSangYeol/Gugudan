@@ -4,9 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <provider android:authorities="com.timeLine.app.FacebookContentProvider503180196705632"
-        android:name="com.timeLine.FacebookContentProvider"
-        android:exported="true"/>
+
 
     <application
         android:allowBackup="true"

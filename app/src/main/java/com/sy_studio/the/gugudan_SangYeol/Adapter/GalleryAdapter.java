@@ -57,7 +57,8 @@ public class GalleryAdapter extends BaseAdapter {
             R.drawable.view4, R.drawable.view5, R.drawable.view6,
             R.drawable.view7, R.drawable.view8, R.drawable.view9,
             R.drawable.view10, R.drawable.view11, R.drawable.view12,
-            R.drawable.view13, R.drawable.view14, R.drawable.view15};
+            R.drawable.view13, R.drawable.view14, R.drawable.view15,
+            R.drawable.view16, R.drawable.view17, R.drawable.view18};
 
 
 

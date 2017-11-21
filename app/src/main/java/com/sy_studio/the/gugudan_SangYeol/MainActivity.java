@@ -1,9 +1,9 @@
 package com.sy_studio.the.gugudan_SangYeol;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -11,11 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.bumptech.glide.Glide;
 import com.sy_studio.the.gugudan_SangYeol.Adapter.MainPageAdapter;
 import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 
@@ -32,7 +29,7 @@ public class MainActivity extends BaseActivity {
     private NavigationView naviView;
     public static DrawerLayout mainDrawLayout;
     private android.support.v4.view.ViewPager mainViewPager;
-    private com.astuetz.PagerSlidingTabStrip tabs;
+    private android.support.design.widget.TabLayout tabs;
 
 
 
@@ -76,8 +73,25 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setValues() {
         mainViewPager.setAdapter(new MainPageAdapter(getSupportFragmentManager()));
-        mainViewPager.setCurrentItem(0);
-        tabs.setViewPager(mainViewPager);
+        mainViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+        tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mainViewPager));
+//
+//        tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                mainViewPager.setCurrentItem(0);
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
     }
 
@@ -113,7 +127,7 @@ public class MainActivity extends BaseActivity {
         this.naviView = (NavigationView) findViewById(R.id.naviView);
         this.naviLaytout = (LinearLayout) findViewById(R.id.naviLaytout);
         this.mainViewPager = (ViewPager) findViewById(R.id.mainViewPager);
-        this.tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        this.tabs = (TabLayout) findViewById(R.id.tabs);
         this.loginBtn = (ImageView) findViewById(R.id.loginBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
         this.allViewBtn = (ImageView) findViewById(R.id.allViewBtn);

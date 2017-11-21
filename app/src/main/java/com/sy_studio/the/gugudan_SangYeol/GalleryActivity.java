@@ -1,8 +1,8 @@
 package com.sy_studio.the.gugudan_SangYeol;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.view.PagerTabStrip;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,7 +19,9 @@ public class GalleryActivity extends BaseActivity {
     private TextView pictureBtn;
     private TextView videoBtn;
     private android.support.v4.view.ViewPager galleryViewPager;
-    private com.astuetz.PagerSlidingTabStrip tabs;
+    private android.support.design.widget.TabItem tabItem;
+    private android.support.design.widget.TabItem tabItem2;
+    private TabLayout tabs;
 
 
     @Override
@@ -46,8 +48,10 @@ public class GalleryActivity extends BaseActivity {
     @Override
     public void setValues() {
         galleryViewPager.setAdapter(new GalleryPageAdapter(getSupportFragmentManager()));
+        galleryViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+        tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(galleryViewPager));
+
         galleryViewPager.setCurrentItem(tempNum);
-        tabs.setViewPager(galleryViewPager);
 
 
 
@@ -55,8 +59,10 @@ public class GalleryActivity extends BaseActivity {
 
     @Override
     public void bindView() {
-        this.tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         this.galleryViewPager = (ViewPager) findViewById(R.id.galleryViewPager);
+        this.tabs = (TabLayout) findViewById(R.id.tabs);
+        this.tabItem2 = (TabItem) findViewById(R.id.tabItem2);
+        this.tabItem = (TabItem) findViewById(R.id.tabItem);
         this.confirmBtn = (TextView) findViewById(R.id.confirmBtn);
         this.backBtn = (ImageView) findViewById(R.id.backBtn);
     }

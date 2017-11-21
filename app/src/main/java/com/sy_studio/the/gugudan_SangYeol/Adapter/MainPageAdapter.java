@@ -17,7 +17,6 @@ import com.sy_studio.the.gugudan_SangYeol.Fragment.TimeLineFrag;
 
 public class MainPageAdapter extends FragmentStatePagerAdapter {
     final int PAGE_COUNT = 5;
-    private String tabTitles[] = new String[] { "공지사항", "타임라인", "맴버", "스케줄", "게시판" };
 
     public MainPageAdapter(FragmentManager fm){
         super(fm);
@@ -45,11 +44,5 @@ public class MainPageAdapter extends FragmentStatePagerAdapter {
             default:
                 return null;
         }
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        // Generate title based on item position
-        return tabTitles[position];
     }
 }

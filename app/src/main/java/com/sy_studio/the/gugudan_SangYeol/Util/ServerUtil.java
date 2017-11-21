@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class ServerUtil {
     private static final String TAG = ServerUtil.class.getSimpleName();
-    private final static String BASE_URL = "http://13.124.240.139/";
+    private final static String BASE_URL = "http://192.168.20.78:8080/";
 
 
     public interface JsonResponseHandler {
@@ -26,19 +26,13 @@ public class ServerUtil {
     }
 
     // 페이스북 페이지 이미지 가져오기
-    public static void get_facebook_img(final Context context, final String id , final JsonResponseHandler handler) {
+    public static void get_facebook_img(final Context context, final String id, final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
-        String url =  "https://graph.facebook.com/v2.10/"+id+"?fields=attachments&fields=attachments&access_token="+ContextUtil.access_token;
+        String url = "https://graph.facebook.com/v2.10/" + id + "?fields=attachments&fields=attachments&access_token=" + ContextUtil.access_token;
 
         Log.d("url", url);
-//        기능을 사용하기 위해 필요한 데이터를 담는 부분.
 
-//        Map<String, String> data = new HashMap<String, String>();
-////        data.put("version", "1");
-////        data.put("lat", "37.610465");
-//        data.put("lon", "126.928954");
-
-        AsyncHttpRequest.get(context, url,  null, true, new AsyncHttpRequest.HttpResponseHandler() {
+        AsyncHttpRequest.get(context, url, null, false, new AsyncHttpRequest.HttpResponseHandler() {
 
             @Override
             public boolean onPrepare() {
@@ -57,6 +51,7 @@ public class ServerUtil {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFinish() {
 
@@ -71,18 +66,12 @@ public class ServerUtil {
     }
 
     // 페이스북 페이지 게시글 가져오기
-    public static void get_facebook_data(final Context context,  final JsonResponseHandler handler) {
+    public static void get_facebook_data(final Context context, final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
-        String url =  "https://graph.facebook.com/v2.10/245682955804231/feed?access_token="+ContextUtil.access_token;
+        String url = "https://graph.facebook.com/v2.10/245682955804231/feed?access_token=" + ContextUtil.access_token;
 
-//        기능을 사용하기 위해 필요한 데이터를 담는 부분.
 
-//        Map<String, String> data = new HashMap<String, String>();
-////        data.put("version", "1");
-////        data.put("lat", "37.610465");
-//        data.put("lon", "126.928954");
-
-        AsyncHttpRequest.get(context, url,  null, true, new AsyncHttpRequest.HttpResponseHandler() {
+        AsyncHttpRequest.get(context, url, null, false, new AsyncHttpRequest.HttpResponseHandler() {
 
             @Override
             public boolean onPrepare() {
@@ -101,6 +90,7 @@ public class ServerUtil {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFinish() {
 
@@ -115,18 +105,11 @@ public class ServerUtil {
     }
 
 
-    public static void FacebookAccessToken(final Context context,  final JsonResponseHandler handler) {
+    public static void FacebookAccessToken(final Context context, final JsonResponseHandler handler) {
 //        기능에 따라 매번 주소를 다르게 적어줘야함.
-        String url =  "https://graph.facebook.com/oauth/access_token?client_id=503180196705632&client_secret=b2a05f31702a97e9685529300b5f9c71&grant_type=client_credentials";
+        String url = "https://graph.facebook.com/oauth/access_token?client_id=503180196705632&client_secret=b2a05f31702a97e9685529300b5f9c71&grant_type=client_credentials";
 
-//        기능을 사용하기 위해 필요한 데이터를 담는 부분.
-
-//        Map<String, String> data = new HashMap<String, String>();
-////        data.put("version", "1");
-////        data.put("lat", "37.610465");
-//        data.put("lon", "126.928954");
-
-        AsyncHttpRequest.get(context, url,  null, true, new AsyncHttpRequest.HttpResponseHandler() {
+        AsyncHttpRequest.get(context, url, null, true, new AsyncHttpRequest.HttpResponseHandler() {
 
             @Override
             public boolean onPrepare() {
@@ -145,6 +128,7 @@ public class ServerUtil {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFinish() {
 
@@ -161,12 +145,12 @@ public class ServerUtil {
 
     // 로그인
     public static void sign_in(final Context context, String id, String pw, final JsonResponseHandler handler) {
-        String url = BASE_URL + "insta/sign_in";
+        String url = BASE_URL + "mobile/get_login";
         //		String registrationId = ContextUtil.getRegistrationId(context);
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("userId", id);
-        data.put("password", pw);
+        data.put("login_id", id);
+        data.put("pw", pw);
 
         AsyncHttpRequest.post(context, url, data, true, new AsyncHttpRequest.HttpResponseHandler() {
 
@@ -204,17 +188,13 @@ public class ServerUtil {
     // 회원 가입 기능
     public static void sign_up(final Context context, final String id,
                                final String pw,
-                               final String name, final String nickname, final String profileImgUrl,
-                               final JsonResponseHandler handler) {
-        String url = BASE_URL + "insta/sign_up";
-
+                               final String name, final JsonResponseHandler handler) {
+        String url = BASE_URL + "mobile/insert_sign_up";
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("userId", id);
-        data.put("password", pw);
+        data.put("login_id", id);
+        data.put("pw", pw);
         data.put("name", name);
-        data.put("nickname", nickname);
-        data.put("profileImgURL", profileImgUrl);
         AsyncHttpRequest.post(context, url, data, true, new AsyncHttpRequest.HttpResponseHandler() {
 
             @Override
@@ -249,9 +229,9 @@ public class ServerUtil {
     }
 
 
-    // 포스팅목록불러오기
+    // 게시글목록불러오기
     public static void get_all_postings(final Context context, final JsonResponseHandler handler) {
-        String url = BASE_URL + "insta/get_all_postings";
+        String url = BASE_URL + "mobile/get_all_postings";
         //		String registrationId = ContextUtil.getRegistrationId(context);
 
         Map<String, String> data = new HashMap<String, String>();
@@ -289,19 +269,21 @@ public class ServerUtil {
         });
     }
 
-    // 이미지 올리기
-    public static void makePosting(final Context context, final int id,
-                                   final String content,
-                                   Bitmap bitmap,
-                                   final JsonResponseHandler handler) {
-        String url = BASE_URL + "insta/make_posting";
+    // 게시글 올리기
+    public static void write_posting(final Context context,
+                                     final String title,
+                                     final String content,
+                                     final int user_id,
+                                     final JsonResponseHandler handler) {
+        String url = BASE_URL + "mobile/write_posting";
 
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("user_id", id+"");
+        data.put("title", title);
         data.put("content", content);
-        AsyncHttpRequest.postWithImageFile(context, url, data, bitmap, "post", new AsyncHttpRequest.HttpResponseHandler() {
+        data.put("user_id", user_id + "");
 
+        AsyncHttpRequest.post(context, url, data, true, new AsyncHttpRequest.HttpResponseHandler() {
             @Override
             public boolean onPrepare() {
                 return true;
