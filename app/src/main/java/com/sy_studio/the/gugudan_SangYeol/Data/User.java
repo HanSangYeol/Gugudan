@@ -1,5 +1,8 @@
 package com.sy_studio.the.gugudan_SangYeol.Data;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by the on 2017-10-18.
  */
@@ -8,6 +11,18 @@ public class User {
     private String id;
     private String pw;
     private String name;
+
+    public static User getUserFromJsonObject(JSONObject json){
+        User tempUser = new User();
+        try {
+            tempUser.setId(json.getString("login_id"));
+            tempUser.setPw(json.getString("pw"));
+            tempUser.setName(json.getString("name"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return tempUser;
+    }
 
     public User() {
     }

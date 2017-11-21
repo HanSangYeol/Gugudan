@@ -1,6 +1,7 @@
 package com.sy_studio.the.gugudan_SangYeol;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,7 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sy_studio.the.gugudan_SangYeol.Data.User;
+import com.sy_studio.the.gugudan_SangYeol.Util.ContextUtil;
 import com.sy_studio.the.gugudan_SangYeol.Util.GlobalData;
+import com.sy_studio.the.gugudan_SangYeol.Util.ServerUtil;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -59,23 +66,44 @@ public class LoginActivity extends BaseActivity {
 //                        SignActivity.signActivity.finish();
 //                        finish();
 //                    }
-                    for (User user : GlobalData.userList) {
-                        if (idEdt.getText().toString().equals(user.getId())) {
-                            if (pwEdt.getText().toString().equals(user.getPw())) {
-                                Toast.makeText(mContext, "로그인 완료", Toast.LENGTH_SHORT).show();
-                                SignActivity.signActivity.finish();
-                                finish();
-                                break;
-                            } else {
-                                Toast.makeText(mContext, "비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
-                                break;
-                            }
-                        } else {
-                            Toast.makeText(mContext, "존재하지않는 아이디입니다", Toast.LENGTH_SHORT).show();
-                            break;
-                        }
+                    ServerUtil.login(mContext, idEdt.getText().toString(), pwEdt.getText().toString(),
+                            new ServerUtil.JsonResponseHandler() {
+                                @Override
+                                public void onResponse(JSONObject json) {
+                                    try {
+                                        Log.d("user", json.getJSONArray("user").toString());
 
-                    }
+                                        JSONArray jsonArray = json.getJSONArray("user");
+
+                                        for (int i=0; i<jsonArray.length(); i++){
+                                            JSONObject user = jsonArray.getJSONObject(i);
+                                            User tempUser = User.getUserFromJsonObject(user);
+
+                                            if (idEdt.getText().toString().equals(tempUser.getId())) {
+                                                if (pwEdt.getText().toString().equals(tempUser.getPw())) {
+                                                    Toast.makeText(mContext, "로그인 완료", Toast.LENGTH_SHORT).show();
+                                                    ContextUtil.login(mContext, tempUser);
+                                                    SignActivity.signActivity.finish();
+                                                    finish();
+                                                    break;
+                                                } else {
+                                                    Toast.makeText(mContext, "비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                }
+                                            } else {
+                                                Toast.makeText(mContext, "존재하지않는 아이디입니다", Toast.LENGTH_SHORT).show();
+                                                break;
+                                            }
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                            });
+
 
 
                 }

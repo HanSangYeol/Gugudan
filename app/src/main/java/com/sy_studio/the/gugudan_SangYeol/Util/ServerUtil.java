@@ -144,8 +144,8 @@ public class ServerUtil {
 
 
     // 로그인
-    public static void sign_in(final Context context, String id, String pw, final JsonResponseHandler handler) {
-        String url = BASE_URL + "mobile/get_login";
+    public static void login(final Context context, String id, String pw, final JsonResponseHandler handler) {
+        String url = BASE_URL + "tje/get_login";
         //		String registrationId = ContextUtil.getRegistrationId(context);
 
         Map<String, String> data = new HashMap<String, String>();
